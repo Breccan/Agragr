@@ -26,7 +26,7 @@ end
 
 namespace :setup do
   task :permissions do
-    run "#{try_sudo}chown -R www-data:www-data #{latest_release}"
+    run "#{try_sudo} chown -R www-data:www-data #{latest_release}"
   end
 end
 
