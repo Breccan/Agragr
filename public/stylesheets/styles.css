@@ -2,12 +2,18 @@ html { height: 100%; }
 body { font: 90%/1.5em “Arial”, Helvetica, sans-serif; height: 100%;  background-color: #fff; color: #333; }
 
 h1 { font-size: 1.8em; margin-bottom: 20px; }
-h2 { font-size: 1.5em; margin-bottom: 20px; }
+h2 { font-size: 1.2em; margin-bottom: 20px; font-weight: normal; }
 h3 { font-size: 1.2em; margin-bottom: 20px; }
 
 a { color: #11D3ED; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 #wrap { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -23px; } /* sticky footer */
+
+.news { border-top: 4px solid; margin-bottom: 4px; }
+.tech { color: rgb(232, 33, 71); color: rgba(232, 33, 71, .80); }
+.funny { color: rgb(237, 227,29); color: rgba(237, 227, 29, .80); }
+.science {  }
+
 
 footer { display: block; height: 23px; margin-top: -23px; background: #444; color: #d7d7d7; font-size: .8em; }
