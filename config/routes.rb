@@ -1,4 +1,6 @@
 Atn::Application.routes.draw do
+  match "home" => "home#index", :as => :home
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -49,6 +51,7 @@ Atn::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
+  root :to => "home#index"
 
   # See how all your routes lay out with "rake routes"
 
