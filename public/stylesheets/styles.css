@@ -4,16 +4,24 @@ body { font: 90%/1.5em “Arial”, Helvetica, sans-serif; height: 100%;  backgr
 h1 { font-size: 1.8em; margin-bottom: 20px; }
 h2 { font-size: 1.2em; margin-bottom: 20px; font-weight: normal; }
 h3 { font-size: 1.2em; margin-bottom: 20px; }
+.news h2 { color: #2b2b2b; }
 
 a { color: #11D3ED; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-#wrap { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -23px; } /* sticky footer */
-
-.news { border-top: 4px solid; margin-bottom: 4px; }
+#wrap { height: auto !important; height: 100%; margin: 0 auto -23px; } /* sticky footer */
+#content { margin-bottom: 40px; }
+.news { border-top: 4px solid; margin-bottom: 4px; background-color: #efefef; padding: 10px; position: relative;
+	  /*  background-image: url(images/linear_bg_2.png); 
+	    background-image: -moz-linear-gradient(100% 100% 90deg, #f7f7f7, #eaeaea);
+	    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eaeaea), to(#f7f7f7));*/
+	 }
+.new { background-color: #EAEAEA; }
 .tech { color: rgb(232, 33, 71); color: rgba(232, 33, 71, .80); }
 .funny { color: rgb(237, 227,29); color: rgba(237, 227, 29, .80); }
-.science {  }
+.science { color: rgb(181, 237,29); color: rgba(181, 237,29, .80); }
+.other { color: rgb(29, 222,237); color: rgba(29, 222,237, .80); }
 
+.stats { border: 1px solid #ddd; left: -41px; top: -39px; background: #f8f8f8; padding: 3px; text-align: center; }
 
 footer { display: block; height: 23px; margin-top: -23px; background: #444; color: #d7d7d7; font-size: .8em; }
