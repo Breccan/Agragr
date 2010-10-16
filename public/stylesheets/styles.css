@@ -19,9 +19,10 @@ nav ul li.topic2 { background: rgb(237, 227,29); background: rgba(237, 227, 29,.
 nav ul li.topic3 { background: rgb(181, 237,29); background: rgba(181, 237,29, .80); color: #2b2b2b; }
 nav ul li.topic4 { background: rgb(29, 222,237); background: rgba(29, 222,237, .80); color: #2b2b2b; }
 
-#content { margin-bottom: 40px; padding: 10px; min-width: 570px; }
+#content { margin-bottom: 40px; padding: 10px; min-width: 770px; }
 .news { border-top: 4px solid; margin-bottom: 4px; background-color: #EDEDED; padding: 5px; position: relative;  }
-.news:hover { background: #f5f5f5; }
+.news:hover {}
+
 .news h2 a { color: #333; }
 .news img.thumb { float: right; border: 1px solid #ddd; padding: 4px; background: #fff; margin-right: 3%; }
 .news .source { font-size: .9em;  text-shadow: 0px 1px 0px #fff; color: #777; }
@@ -35,7 +36,8 @@ nav ul li.topic4 { background: rgb(29, 222,237); background: rgba(29, 222,237, .
 
 .stats { border: 1px solid #d1d1d1; left: -32px; top: 2px; background: #fff; padding: 3px; text-align: center; color: #6b6b6b; font-size: .8em; }
 
-.close_btn { float: right; z-index: 2; position: absolute; right: 5px; }
+.close_btn { float: right; z-index: 2; position: absolute; right: 5px; display: none; }
+.news:hover span.close_btn { display: inline; }
 
 #filter { background: url('/images/filter_bg.png') repeat-x #EEEDED; padding: 10px; border: 1px solid #ddd; color: #777; text-shadow: 0px 1px 0px #fff; }
 #filter form { margin-bottom: 15px; }
