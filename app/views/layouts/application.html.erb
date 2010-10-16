@@ -10,11 +10,17 @@
 	<%= csrf_meta_tag %>
 </head>
 <body>
-	<header>
-		<h1>All the news or ReditReader</h1>
-	</header>
-
-<%= yield %>
+	<div id="wrap">
+		<header>
+			<h1>All the news or ReditReader</h1>
+		</header>
+		<div class="container_12">
+			<%= yield %>
+		</div>
+	</div>
+	<footer>
+		footer text
+	</footer>
 
 </body>
 </html>
