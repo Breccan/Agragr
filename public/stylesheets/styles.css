@@ -1,27 +1,36 @@
 html { height: 100%; }
-body { font: 90%/1.5em “Arial”, Helvetica, sans-serif; height: 100%;  background-color: #fff; color: #333; }
+body { font: 90%/1.5em Arial, Helvetica, sans-serif; height: 100%;  background-color: #fff; color: #333; }
 
 h1 { font-size: 1.8em; margin-bottom: 20px; }
-h2 { font-size: 1.2em; margin-bottom: 20px; font-weight: normal; }
+h2 { font-size: 1.2em; font-weight: normal; letter-spacing: -.5px; text-shadow: 0px 1px 0px #fff; }
 h3 { font-size: 1.2em; margin-bottom: 20px; }
 .news h2 { color: #2b2b2b; }
 
-a { color: #11D3ED; text-decoration: none; }
+a { color: #777; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-#wrap { height: auto !important; height: 100%; margin: 0 auto -23px; } /* sticky footer */
-#content { margin-bottom: 40px; }
-.news { border-top: 4px solid; margin-bottom: 4px; background-color: #efefef; padding: 10px; position: relative;
-	  /*  background-image: url(images/linear_bg_2.png); 
-	    background-image: -moz-linear-gradient(100% 100% 90deg, #f7f7f7, #eaeaea);
-	    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eaeaea), to(#f7f7f7));*/
-	 }
-.new { background-color: #EAEAEA; }
-.tech { color: rgb(232, 33, 71); color: rgba(232, 33, 71, .80); }
-.funny { color: rgb(237, 227,29); color: rgba(237, 227, 29, .80); }
-.science { color: rgb(181, 237,29); color: rgba(181, 237,29, .80); }
-.other { color: rgb(29, 222,237); color: rgba(29, 222,237, .80); }
+#wrap { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -23px; } /* sticky footer */
 
-.stats { border: 1px solid #ddd; left: -41px; top: -39px; background: #f8f8f8; padding: 3px; text-align: center; }
+nav { margin-bottom: 12px; }
+nav ul li { float: left; margin-right: -10px; padding: 10px 20px; background: rgb(232, 33, 71); background: rgba(232, 33, 71, .80); }
+nav ul li.topic1 { background: rgb(232, 33, 71); background: rgba(232, 33, 71, .80); color: #2b2b2b; }
+nav ul li.topic2 { background: rgb(237, 227,29); background: rgba(237, 227, 29,.80); color: #2b2b2b; }
+nav ul li.topic3 { background: rgb(181, 237,29); background: rgba(181, 237,29, .80); color: #2b2b2b; }
+nav ul li.topic4 { background: rgb(29, 222,237); background: rgba(29, 222,237, .80); color: #2b2b2b; }
+
+#content { margin-bottom: 40px; padding: 10px; }
+.news { border-top: 4px solid; margin-bottom: 4px; background-color: #E8E8E8; padding: 5px; position: relative; }
+.news h2 a { color: #333; }
+.news img { float: right; border: 1px solid #ddd; padding: 2px; background: #fff; }
+.news .source { font-size: .9em;  text-shadow: 0px 1px 0px #fff; color: #777; }
+.recent { background-color: #DBDBDB; }
+
+.news_content { overflow: hidden; position: relative; left: -32px; }
+.topic1 { color: rgb(232, 33, 71); color: rgba(232, 33, 71, .80); }
+.topic2 { color: rgb(237, 227,29); color: rgba(237, 227, 29, .80); }
+.topic3 { color: rgb(181, 237,29); color: rgba(181, 237,29, .80); }
+.topic4 { color: rgb(29, 222,237); color: rgba(29, 222,237, .80); }
+
+.stats { border: 1px solid #d1d1d1; left: -32px; top: 2px; background: #fff; padding: 3px; text-align: center; color: #6b6b6b; font-size: .8em; }
 
 footer { display: block; height: 23px; margin-top: -23px; background: #444; color: #d7d7d7; font-size: .8em; }
