@@ -24,17 +24,28 @@ nav ul li.topic4 { background: rgb(29, 222,237); background: rgba(29, 222,237, .
 .news:hover {}
 
 .news h2 a { color: #333; }
-.news img.thumb { float: right; border: 1px solid #ddd; padding: 4px; background: #fff; margin-right: 3%; }
-.news .source { font-size: .9em;  text-shadow: 0px 1px 0px #fff; color: #777; }
+.news .domain{ font-size: .7em;  text-shadow: 0px 1px 0px #fff; color: #777; }
 .recent { background-color: #DBDBDB; }
 
-.news_content { overflow: hidden; position: relative; left: -32px; }
+.news_content { overflow: hidden; position: relative; padding-left: 10px;}
+.news img.thumb { display:none;}
+.news:hover img.thumb { float: right; border: 1px solid #ddd; padding: 4px; background: #fff; margin-right: 3%; }
 .topic1 { color: rgb(232, 33, 71); color: rgba(232, 33, 71, .80); }
 .topic2 { color: rgb(237, 227,29); color: rgba(237, 227, 29, .80); }
 .topic3 { color: rgb(181, 237,29); color: rgba(181, 237,29, .80); }
 .topic4 { color: rgb(29, 222,237); color: rgba(29, 222,237, .80); }
 
 .stats { border: 1px solid #d1d1d1; left: -32px; top: 2px; background: #fff; padding: 3px; text-align: center; color: #6b6b6b; font-size: .8em; }
+
+.news h2 { height: 20px; }
+.news:hover h2 { height: auto; }
+.news .post-counts { display: none; }
+.news:hover .post-counts { display: block; }
+.post-counts a { padding-left: 22px; background-position: left; background-repeat: no-repeat; }
+.post-counts a.reddit { background-image: url('i/ico/reddit-16x16.gif'); }
+.post-counts a.mefi   { background-image: url('i/ico/metafilter-16x16.png'); }
+.post-counts a.fark   { background-image: url('i/ico/fark-16x16.gif'); }
+.post-counts a.ynews  { background-image: url('i/ico/hackernews-18x18.gif'); }
 
 .close_btn { float: right; z-index: 2; position: absolute; right: 5px; display: none; }
 .news:hover span.close_btn { display: inline; }

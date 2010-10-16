@@ -1,66 +1,45 @@
 <div class="grid_9">
   <%= will_paginate @links %>
-	
+  
   <% @links.each do |post| %>
     <div class="news topic4 recent clearfix"> <!-- colour classes = one for each topic + either 'recent' or not -->
-      <div class="stats grid_1">123</div>
-      <div class="news_content grid_8">
-        <h2><%= link_to post.title, post.url %></h2>
-        <p class="source">newsweek.com</p>
+      <!--div class="stats grid_1"> 123 </div-->
+      <div class="news_content">
+        <h2><%= link_to post.title, post.url %> <span class="domain">newsweek.com</span></h2>
+   <div class="post-counts">
+          <a class="reddit" href="#">4</a>
+          <a class="ynews" href="#">1</a>
+          <a class="fark" href="#">1</a>
+          <a class="mefi" href="#">2</a>
+        </div>
+
+        <!--p class="sources">posted 4 times - <a href="#">reddit</a> (<a href="#">3</a>) <a href="#">Hacker News</a> (1)</p-->
       </div>
       <img src="/images/placeholder.jpg" class="thumb" width="70px" height="70px" alt="placeholder" title="placeholder"/>
     </div>
   <% end %>
 
-		<div class="news topic4 recent clearfix"> <!-- colour classes = one for each topic + either 'recent' or not -->
-		<div class="stats grid_1">123</div>
-		<div class="news_content grid_8">
-			<h2><a href="#">Google upgrades site-overlay feature in Analytics with In-Picture Analytics</a></h2>
-			<p class="source">newsweek.com</p>
-		</div>
-		<img src="/images/placeholder.jpg" class="thumb" width="70px" height="70px" alt="placeholder" title="placeholder"/>
-	</div>
-	
-	<div class="news topic1 clearfix">
-		<div class="stats grid_1">123</div>
-		<div class="news_content grid_8">
-			<h2><a href="#">News title</a></h2>
-			<p class="source">newsweek.com</p>
-		</div>
-		<img src="/images/t.png" class="thumb" width="70px" height="70px" alt="placeholder" title="placeholder"/>
-		<span class="close_btn"><a href=""><img src="/images/icons/close.png" alt="close"/></a></span>
-	</div>
-
-	<div class="news topic3 clearfix">
-		<div class="stats grid_1">123</div>
-		<div class="news_content grid_8">
-			<h2><a href="#">News title</a></h2>
-			<p class="source">newsweek.com</p>
-		</div>
-	</div>
-
-	<div class="news topic2 clearfix">
-		<div class="stats grid_1">123</div>
-		<div class="news_content grid_8">
-			<h2><a href="#">News title</a></h2>
-			<p class="source">newsweek.com</p>
-		</div>
-	</div>
 </div>
 
 <div id="filter_wrapper" class="grid_3">
-	<div id="filter">
-		<form action="" method="">
-			<label>Filter by:</label>
-			<select>
-				<option>youtube</option>
-				<option>image-only sites</option>
-			</select>
-			<a href="">add</a>
-		</form>
-		<ul>
-			<li><a href="#">filtered thing <span><img src="/images/icons/remove_filter.png" alt="remove"/></span></a></li> <!-- click to remove filters -->
-			<li><a href="#">another <span><img src="/images/icons/remove_filter.png" alt="remove"/></span></a></li>
-		</ul>
-	</div>
+  <div id="filter">
+    <form action="" method="">
+      <label>Don't show:</label>
+      <select>
+        <option>headline only</option>
+        <option>self posts</option>
+        <option>videos</option>
+        <option>pictures</option>
+        <option>does anyone else...</option>
+        <option>"my dog", "my cat"</option>
+        <option>"my girlfriend"</option>
+        <option>custom filter...</option>
+      </select>
+      <a href="">add</a>
+    </form>
+    <ul>
+      <li><a href="#">filtered thing <span><img src="/images/icons/remove_filter.png" alt="remove"/></span></a></li> <!-- click to remove filters -->
+      <li><a href="#">another <span><img src="/images/icons/remove_filter.png" alt="remove"/></span></a></li>
+    </ul>
+  </div>
 </div>
