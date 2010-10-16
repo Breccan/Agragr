@@ -20,7 +20,8 @@ nav ul li.topic3 { background: rgb(181, 237,29); background: rgba(181, 237,29, .
 nav ul li.topic4 { background: rgb(29, 222,237); background: rgba(29, 222,237, .80); color: #2b2b2b; }
 
 #content { margin-bottom: 40px; padding: 10px; min-width: 570px; }
-.news { border-top: 4px solid; margin-bottom: 4px; background-color: #E8E8E8; padding: 5px; position: relative; }
+.news { border-top: 4px solid; margin-bottom: 4px; background-color: #EDEDED; padding: 5px; position: relative;  }
+.news:hover { background: #f5f5f5; }
 .news h2 a { color: #333; }
 .news img.thumb { float: right; border: 1px solid #ddd; padding: 4px; background: #fff; margin-right: 3%; }
 .news .source { font-size: .9em;  text-shadow: 0px 1px 0px #fff; color: #777; }
@@ -34,9 +35,20 @@ nav ul li.topic4 { background: rgb(29, 222,237); background: rgba(29, 222,237, .
 
 .stats { border: 1px solid #d1d1d1; left: -32px; top: 2px; background: #fff; padding: 3px; text-align: center; color: #6b6b6b; font-size: .8em; }
 
+.close_btn { float: right; z-index: 2; position: absolute; right: 5px; }
 
-.close_btn { background: url('/images/icons/close.png') no-repeat; display: inline-block; overflow: hidden; height: 19px; float: right; z-index: 2; position: absolute; right: 5px; }
-.close_btn a.close { margin-top: 0px; }
-.close_btn a img.close:hover { margin-top: -21px; }
+#filter { background: url('/images/filter_bg.png') repeat-x #EEEDED; padding: 10px; border: 1px solid #ddd; color: #777; text-shadow: 0px 1px 0px #fff; }
+#filter form { margin-bottom: 15px; }
+#filter form label { color: #5b5b5b; display: block; }
+#filter ul li { position: relative; display: inline; font-size: .9em;  border: 1px solid #ddd; padding: 2px 20px 2px 10px; margin: 0px 3px 5px 0px; 
+				background: url('/images/button_bg.png') repeat-x #ededed;  /* backup gradient image */
+				background: -moz-linear-gradient(center top , #FFFFFF, #EDEDED); -moz-border-radius: 10px; /* FF */
+				-webkit-border-radius: 10px; /* Webkit */
+				 }
+#filter ul li span { display: none; position: absolute; right: 10px; top: -2px; }
+#filter ul li a:hover { text-decoration: none; }
+#filter ul li:hover { -moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2); background: -moz-linear-gradient(center top , #FFFFFF, #EDEDED); 
+					border: 1px solid #ddd; color: #4b4b4b; }
+#filter ul li:hover span { display: inline;  }
 
 footer { display: block; height: 23px; margin-top: -23px; background: #444; color: #d7d7d7; font-size: .8em; }
