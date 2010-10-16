@@ -4,6 +4,8 @@ gem 'rails'
 gem 'sqlite3-ruby'
 gem 'capistrano'
 gem 'pg'
+gem 'nokogiri'
+gem 'json'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

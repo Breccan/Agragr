@@ -5,3 +5,20 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+[
+  {
+    :name => "Hacker News",
+    :url => "http://new.ycombinator.com",
+    :harvest_strategy => "hn"
+  },
+  { :name => "R/Programming",
+    :url => 'http://www.reddit.com/r/programming.json',
+    :harvest_strategy => "reddit" 
+  }
+].each do |source|
+  unless Feed.where(["name = ?", source[:name]]).first
+    Feed.create(source)
+  end
+end
+

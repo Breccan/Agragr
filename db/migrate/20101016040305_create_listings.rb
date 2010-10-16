@@ -3,10 +3,11 @@ class CreateListings < ActiveRecord::Migration
     create_table :listings do |t|
       t.string :url
       t.integer :current_votes
-      t.integer :source_id
+      t.integer :feed_id
       t.string :title
       t.text :description
       t.integer :link_id
+      t.string :comments_url
 
       t.timestamps
     end
