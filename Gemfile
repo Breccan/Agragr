@@ -6,6 +6,7 @@ gem 'capistrano'
 gem 'pg'
 gem 'nokogiri'
 gem 'json'
+gem 'will_paginate', '~> 3.0.beta'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

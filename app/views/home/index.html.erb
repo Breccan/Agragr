@@ -1,6 +1,18 @@
 <div class="grid_9">
+  <%= will_paginate @links %>
 	
-	<div class="news topic4 recent clearfix"> <!-- colour classes = one for each topic + either 'recent' or not -->
+  <% @links.each do |post| %>
+    <div class="news topic4 recent clearfix"> <!-- colour classes = one for each topic + either 'recent' or not -->
+      <div class="stats grid_1">123</div>
+      <div class="news_content grid_8">
+        <h2><%= link_to post.title, post.url %></h2>
+        <p class="source">newsweek.com</p>
+      </div>
+      <img src="/images/placeholder.jpg" class="thumb" width="70px" height="70px" alt="placeholder" title="placeholder"/>
+    </div>
+  <% end %>
+
+		<div class="news topic4 recent clearfix"> <!-- colour classes = one for each topic + either 'recent' or not -->
 		<div class="stats grid_1">123</div>
 		<div class="news_content grid_8">
 			<h2><a href="#">Google upgrades site-overlay feature in Analytics with In-Picture Analytics</a></h2>
