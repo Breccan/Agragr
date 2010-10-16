@@ -7,7 +7,8 @@ if ($('filter')) {
     var text   = filter.get('text');
     var name   = filter.get('value');
     if ($(name)) { return; }
-    $('selected-filters').adopt(new Element('li', {text:text, id:name}));
+    var a = new Element('a', {text:text, id:name, href:'#'});
+    $('selected-filters').adopt(new Element('li').adopt(a));
   });
 
   //Remove event to the filter list.
