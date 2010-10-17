@@ -27,11 +27,12 @@ nav ul li.disabled { background: #dddddd; background: rgba(190, 190,190, .50);  
 nav ul li.disabled a { color: #888; }
 
 #content { margin-bottom: 40px; padding: 10px; min-width: 770px; }
-.news { border-top: 4px solid; margin-bottom: 4px; background-color: #EDEDED; padding: 5px; position: relative;  }
-.news:hover {}
+#content .news { border-top: 4px solid; margin-bottom: 4px; background-color: #EDEDED; padding: 5px; position: relative;  }
+#content .news:hover {}
 
-.news h2 a { color: #333; }
-.news .domain{ font-size: .7em;  text-shadow: 0px 1px 0px #fff; color: #777; }
+
+#content .news h2 a { color: #333; }
+#content .news .domain{ font-size: .7em;  text-shadow: 0px 1px 0px #fff; color: #777; }
 .recent { background-color: #DBDBDB; }
 
 .news_content { overflow: hidden; position: relative; padding-left: 10px;}
