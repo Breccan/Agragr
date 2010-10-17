@@ -36,6 +36,7 @@ nav ul li.disabled a { color: #888; }
 #content { margin-bottom: 40px; padding: 10px; min-width: 770px; }
 #content .news { border-top: 4px solid; margin-bottom: 4px; background-color: #EDEDED; padding: 5px; position: relative;  }
 #content .news:hover {}
+#content .news.disabled { display: none; }
 
 
 #content .news h2 a { color: #333; }
