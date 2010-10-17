@@ -24,10 +24,9 @@
 		</header>
 		<nav class="clearfix">
 			<ul id="topics">
-				<li id="topic1" class="topic"><a href="#">topic 1</a></li>
-				<li id="topic2" class="topic"><a href="#">topic 2</a></li>
-				<li id="topic3" class="topic"><a href="#">topic 3</a></li>
-				<li id="topic4" class="topic"><a href="#">topic 4</a></li>
+      <% @topics.each do |topic| %>
+				<li id="<%=topic.name%>" class="topic <%= (topic.disabled(session)) ? 'disabled' : '' %>"><a href="#"><%=topic.name%></a></li>
+      <% end %>
 			</ul>
 		</nav>
 		<div id="content" class="container_12 clearfix">
