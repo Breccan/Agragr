@@ -58,7 +58,7 @@ class HomeController < ApplicationController
   end
 
   def set_topics
-    if session[:topics].blank?
+    if session[:topics].blank? && session[:values_set].blank?
       session[:topics] = Topic.all.collect { |t| t.id }
       session[:values_set] = "true"
     end
