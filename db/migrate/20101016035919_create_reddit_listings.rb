@@ -5,7 +5,7 @@ class CreateRedditListings < ActiveRecord::Migration
       t.boolean  :nsfw
       t.integer  :listing_id
       t.string   :subreddit
-      t.string   :selftext
+      t.text   :selftext
       t.string   :author
       t.string   :permalink
       t.integer  :num_comments

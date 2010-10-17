@@ -2,7 +2,7 @@ class CreateLinks < ActiveRecord::Migration
   def self.up
     create_table :links do |t|
       t.string :url
-      t.string :title
+      t.text :title
       t.integer :score, :default => 0
       t.text :description
       t.integer :topic_id

@@ -4,7 +4,7 @@ class CreateListings < ActiveRecord::Migration
       t.string :url
       t.integer :current_votes
       t.integer :feed_id
-      t.string :title
+      t.text :title
       t.text :description
       t.integer :link_id
       t.string :comments_url
