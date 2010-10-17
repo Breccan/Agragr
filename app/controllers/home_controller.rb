@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   def index
     @links = Link.build_filter_scope(session).paginate :page => params[:page], :order => 'created_at DESC'
     @topics = Topic.all
-    @filter_options 
+    @filters = Link::Filters
     #request.xhr
   end
 
@@ -29,6 +29,12 @@ class HomeController < ApplicationController
     if session[:filters].blank?
       session[:filters] = [Link::Filters["NSFW"]]
     end
+    @active_filters => get_filters(session[:filters])
+  end
+  
+  def get_filters(filters)
+    inverted_filters = Link::Filters.invert
+    filters.collect { |f| inverted_filters[f] }
   end
 
   def set_topics
