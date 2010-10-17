@@ -40,12 +40,19 @@ nav ul li.topic4 { background: rgb(29, 222,237); background: rgba(29, 222,237, .
 .news h2 { height: 20px; }
 .news:hover h2 { height: auto; }
 .news .post-counts { display: none; }
-.news:hover .post-counts { display: block; }
-.post-counts a { padding-left: 22px; background-position: left; background-repeat: no-repeat; }
-.post-counts a.reddit { background-image: url('i/ico/reddit-16x16.gif'); }
-.post-counts a.mefi   { background-image: url('i/ico/metafilter-16x16.png'); }
-.post-counts a.fark   { background-image: url('i/ico/fark-16x16.gif'); }
-.post-counts a.ynews  { background-image: url('i/ico/hackernews-18x18.gif'); }
+.news:hover .post-counts { display: block; height: 25px; }
+.post-counts a { padding-left: 24px; display: inline-block; overflow: hidden; height: 20px; margin-right: 3px; }
+
+.post-counts a.mefi  { background: url('/images/icons/metafilter_icon.png') 0 -21px no-repeat; }
+.post-counts a.mefi:hover { background-position: 0 0px; }
+.post-counts a.fark  { background: url('/images/icons/fark_icon.png') 0px -21px no-repeat; }
+.post-counts a.fark:hover { background-position: 0 0px; }
+.post-counts a.reddit  { background: url('/images/icons/reddit_icon.png') 0 -21px no-repeat; }
+.post-counts a.reddit:hover { background-position: 0 0px; }
+.post-counts a.ynews  { background: url('/images/icons/hackernews_icon.png') 0 -21px no-repeat; }
+.post-counts a.ynews:hover { background-position: 0 0px; }
+
+
 
 .close_btn { float: right; z-index: 2; position: absolute; right: 5px; display: none; }
 .news:hover span.close_btn { display: inline; }
@@ -53,7 +60,7 @@ nav ul li.topic4 { background: rgb(29, 222,237); background: rgba(29, 222,237, .
 #filter { background: url('/images/filter_bg.png') repeat-x #EEEDED; padding: 10px; border: 1px solid #ddd; color: #777; text-shadow: 0px 1px 0px #fff; }
 #filter form { margin-bottom: 15px; }
 #filter form label { color: #5b5b5b; display: block; }
-#filter ul li { position: relative; display: inline; font-size: .9em;  border: 1px solid #ddd; padding: 2px 10px 2px 10px; margin: 0px 3px 5px 0px; 
+#filter ul li { position: relative; display: inline-block; font-size: .9em;  border: 1px solid #ddd; padding: 2px 10px 2px 10px; margin: 0px 3px 5px 0px; 
 				background: url('/images/button_bg.png') repeat-x #ededed;  /* backup gradient image */
 				background: -moz-linear-gradient(center top , #FFFFFF, #EDEDED); -moz-border-radius: 10px; /* FF */
 				-webkit-border-radius: 10px; /* Webkit */
