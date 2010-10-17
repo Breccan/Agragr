@@ -18,6 +18,18 @@ var Req = ({
  */
 if ($('topics')) {
 
+  var hideTopic = function(name) {
+    var links = $$('.topic-'+name);
+    if (!links) { return; }
+    links.addClass('disabled');
+  };
+
+  var unhideTopic = function(name) {
+    var links = $$('.topic-'+name);
+    if (!links) { return; }
+    links.removeClass('disabled');
+  };
+
   $('topics').addEvent('click', function(e) {
     var target = e.target;
     if (target.get('tag')!='a') { return; }
@@ -26,9 +38,11 @@ if ($('topics')) {
     //Toggle whether the class is enabled or disabled.
     if (li.hasClass('disabled')) {
       li.removeClass('disabled');
+      unhideTopic(name);
       Req.send('topic/enable/'+name);
     } else {
       li.addClass('disabled'); 
+      hideTopic(name);
       Req.send('topic/disable/'+name);
    }
   });
