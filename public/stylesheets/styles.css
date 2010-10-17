@@ -12,7 +12,11 @@ a:hover { text-decoration: underline; }
 #wrap { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -23px; } /* sticky footer */
 .top_links { font-size: .9em; }
 
-nav { margin-bottom: 12px; }
+#header { background: #4b4b4b; padding: 10px; }
+#header h2 { text-shadow: none; color: #fff; }
+#logo { position:absolute; right:20px; top:10px; }
+
+nav { margin-bottom: 12px; background: #f2f2f2; }
 nav ul li { float: left; margin-right: -10px; padding: 10px 20px; background: #ED4D6C; background: rgba(232, 33, 71, .80); text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
 nav ul li a { color: #2b2b2b; }
 nav ul li.community { background: #ED4D6C; background: rgba(232, 33, 71, .80); } /* pink */
@@ -68,7 +72,7 @@ nav ul li.disabled a { color: #888; }
 .close_btn { float: right; z-index: 2; position: absolute; right: 5px; display: none; }
 .news:hover span.close_btn { display: inline; }
 
-#filter { background: url('/images/filter_bg.png') repeat-x #EEEDED; padding: 10px; border: 1px solid #ddd; color: #777; text-shadow: 0px 1px 0px #fff; }
+#filter { margin-top: 22px; background: url('/images/filter_bg.png') repeat-x #EEEDED; padding: 10px; border: 1px solid #ddd; color: #777; text-shadow: 0px 1px 0px #fff; }
 #filter form { margin-bottom: 15px; }
 #filter form label { color: #5b5b5b; display: block; }
 #filter ul li { position: relative; display: inline-block; font-size: .9em;  border: 1px solid #ddd; padding: 2px 10px 2px 10px; margin: 0px 3px 5px 0px; 
@@ -82,4 +86,4 @@ nav ul li.disabled a { color: #888; }
 					border: 1px solid #ddd; color: #4b4b4b; }
 #filter ul li:hover span { display: inline;  }
 
-footer { display: block; height: 23px; margin-top: -23px; background: #444; color: #d7d7d7; font-size: .8em; }
+footer { display: block; height: 23px; margin-top: -23px; background: #444; color: #d7d7d7; font-size: .8em; text-align: center; }

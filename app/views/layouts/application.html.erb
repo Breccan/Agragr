@@ -3,7 +3,7 @@
 <head>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
-	<title>agragr</title>
+	<title>Agragr</title>
 	<%= stylesheet_link_tag "/stylesheets/reset.css" %>
 	<%= stylesheet_link_tag "/stylesheets/styles.css" %>
 	<%= stylesheet_link_tag "/stylesheets/960.css" %>
@@ -19,10 +19,11 @@
 		<!--div id="top_links">
 			about 
 		</div-->
-		<header>
-			<img src="/images/agragr.png" alt="Agragr"/>
-			<h1 style="display:none">Agragr: The Aggregator Aggregator</h1>
-		</header>
+		<div id="header">
+				<h1 style="display:none">Agragr</h1>
+				<h2>We aggregated your aggregators so you can slack off while you slack off.</h2>
+		</div>
+		<img src="/images/logo.png" alt="Agragr" id="logo" />
 		<nav class="clearfix">
 			<ul id="topics">
       <% @topics.each do |topic| %>
@@ -31,6 +32,7 @@
 
 			</ul>
 		</nav>
+
 		<div id="content" class="container_12 clearfix">
 			<%= yield %>
 		</div>
