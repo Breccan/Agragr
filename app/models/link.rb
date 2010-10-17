@@ -16,7 +16,7 @@ class Link < ActiveRecord::Base
     joins(:listings => :reddit_listings).where(["reddit_listings.url = ?", /.jpg/])
   }
   scope :limit_topics, lambda { |topic_ids|
-    where("links.topic_id IN #{topic_ids.join(, )}")
+    where("links.topic_id IN (#{topic_ids.join(', ')})")
   }
 
 
