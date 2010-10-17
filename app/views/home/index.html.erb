@@ -5,7 +5,7 @@
     <div class="news topic4 recent clearfix"> <!-- colour classes = one for each topic + either 'recent' or not -->
       <!--div class="stats grid_1"> 123 </div-->
       <div class="news_content">
-        <h2><%= link_to post.title, post.url %> <span class="domain">newsweek.com</span></h2>
+        <h2><%= link_to post.title, post.url %> <span class="domain"><%= post.domain %></span></h2>
           <div class="post-counts">
             <a class="reddit" href="#">4</a>
             <a class="ynews" href="#">1</a>
