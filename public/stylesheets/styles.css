@@ -22,13 +22,16 @@ a:hover { text-decoration: underline; }
 nav { margin-bottom: 12px; background: #f2f2f2; }
 nav ul li { float: left; margin-right: -10px; padding: 10px 20px; background: #ED4D6C; background: rgba(232, 33, 71, .80); text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
 nav ul li a { color: #2b2b2b; }
-nav ul li.community { background: #ED4D6C; background: rgba(232, 33, 71, .80); } /* pink */
-nav ul li.entertainment { background: #F1E94A; background: rgba(237, 227, 29,.80); } /* yellow*/
-nav ul li.funny{ background: #EBB838; background: rgba(234, 170,10, .80); } /* orange */
-nav ul li.programming  { background: #C4F14A; background: rgba(181, 237,29, .80); } /* green */
-nav ul li.science {  background: rgba(29, 222,237, .80); } /* light blue */
-nav ul li.technology { background: rgba(36, 226,190, .80); }  /* turq*/
-nav ul li.worldnews {  background: rgba(33, 156,232, .80); }  /* blue*/
+
+nav ul li.news		{ background: #EA4A69; background: rgba(232, 33, 71, .80); } /* pink */
+nav ul li.popculture		{ background: #EEE647; background: rgba(237, 227, 29,.80); } /* yellow*/
+nav ul li.funny		{ background: #EBB838; background: rgba(234, 170, 10, .80); } /* orange */
+nav ul li.games		{ background: #C1EE47; background: rgba(181, 237, 29, .80); } /* green */
+nav ul li.science 	{ background: #47E2EE; background: rgba(29, 222, 237, .80); } /* light blue */
+nav ul li.tech 		{ background: #4DE5C8; background: rgba(36, 226, 190, .80); }  /* turq*/
+nav ul li.code		{ background: #4AADEA; background: rgba(33, 156, 232, .80); }  /* blue*/
+nav ul li.hobbies		{ background: rgba(41, 234, 31, .80); }  /* bright green */
+nav ul li.personal	{ background: rgba(39, 96, 224, .80); }  /* deep blue*/
 
 nav ul li.disabled { background: #dddddd; background: rgba(190, 190,190, .50);  }
 nav ul li.disabled a { color: #888; }
@@ -48,13 +51,16 @@ nav ul li.disabled a { color: #888; }
 .news:hover img.thumb { float: right; border: 1px solid #ddd; padding: 4px; background: #fff; margin-right: 3%; }
 .news .loaded-stamp { display:none; }
 
-.community {  color: rgba(232, 33, 71, .80); }
-.entertainmnet {  color: rgba(237, 227, 29,.80); }
-.funny {  color: rgba(181, 237,29, .80); }
-.programming { color: rgba(29, 222,237, .80); }
-.science {  color: rgba(36, 226,190, .80); }
-.technology { color: rgba(234, 170,10, .80); }
-.worldnews { color: rgba(33, 156,232, .80); }
+.topic-news{  color: rgba(232, 33, 71, .80); }
+.topic-popculture {  color: rgba(237, 227, 29,.80); }
+.topic-funny {  color: rgba(181, 237,29, .80); }
+.topic-games{ color: rgba(29, 222,237, .80); }
+.topic-science {  color: rgba(36, 226,190, .80); }
+.topic-tech{ rgba(234, 170,10, .80); }
+.topic-code{ color: rgba(33, 156,232, .80); }
+.topic-hobbies{ color: rgba(41, 234,31, .80); }
+.topic-personal{ color: rgba(33, 156,232, .80); }
+
 
 .stats { border: 1px solid #d1d1d1; left: -32px; top: 2px; background: #fff; padding: 3px; text-align: center; color: #6b6b6b; font-size: .8em; }
 
