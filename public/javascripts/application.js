@@ -4,7 +4,7 @@ var Req = ({
 
   reqObj: new Request.JSON(),
 
-  send: function(path, params) {
+  send: function(path, params, callback) {
     if (!path.match(/^\//)) { path = '/'+path; }
     if (!params) { params = {}; }
     params.url = path;
@@ -64,5 +64,38 @@ if ($('filter')) {
   });
 
 }
+
+/* Unread Item Count */
+var originalTitle = '';
+var addUnread = function(n) {
+  var match  = document.title.match(/\((.*)\)$/);
+  if (!match) { 
+    originalTitle = document.title;
+  }
+  var unread = (match) ? new Number(match[1])+n : n;
+  document.title = originalTitle +' ('+unread+')';
+}
+
+var clearUnread = function() {
+ document.title = document.title.replace(/\((.*)\)$/, '');
+}
+
+/* Clear the unread items when the window is focused. */
+window.addEvent('focus', clearUnread);
+
+update = function() {
+  new Request.HTML({
+    url:'/',
+    onSuccess: function(tree,els) {
+      var news = els.filter(function(el) {
+        return el.match('.news');
+      });
+      $('news-list').adopt(news, 'top'); 
+      addUnread(news.length);
+    }
+  }).get({since:new Date().getTime()});
+}
+
+update.periodical(30000);
 
 })(); //End fun closure.
