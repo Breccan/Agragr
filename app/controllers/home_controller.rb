@@ -46,7 +46,7 @@ class HomeController < ApplicationController
 
   private
   def set_filters
-    if session[:filters].blank?
+    if session[:filters].blank? && session[:values_set].blank?
       session[:filters] = [:nsfw]
     end
     @active_filters = get_filters(session[:filters])
@@ -60,6 +60,7 @@ class HomeController < ApplicationController
   def set_topics
     if session[:topics].blank?
       session[:topics] = Topic.all.collect { |t| t.id }
+      session[:values_set] = "true"
     end
   end
 

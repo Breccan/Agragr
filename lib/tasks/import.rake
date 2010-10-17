@@ -19,9 +19,9 @@ namespace :import do
                                    :title => item["title"])
 
           RedditListing.create(:listing => listing,
-                               :nsfw => item["over18"] == "true" ? true : false,
-                               :self => item["is_self"] == "true" ? true : false,
-                               :author => item["author"],
+                               :nsfw => item["over18"] || false,
+                               :self => item["is_self"] || false,
+                               :author => item["author"] || false,
                                :num_comments => item["num_comments"],
                                :ups => item["ups"],
                                :downs => item["downs"],
