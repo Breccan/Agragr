@@ -7,7 +7,8 @@ class HomeController < ApplicationController
     @topics = Topic.all
     @filters = Link::Filters
     if request.xhr?
-      @links = Link.build_filter_scope(session).order("created_at DESC").where(["created_at > ?", params[:timestamp]]).all
+      params[:since] ||= 2.days.ago
+      @links = Link.build_filter_scope(session).order("created_at DESC").where(["created_at > ?", params[:since]]).all
       render :partial => "links"
     else
       @links = Link.build_filter_scope(session).paginate :page => params[:page], :order => 'created_at DESC'
@@ -17,10 +18,10 @@ class HomeController < ApplicationController
   def add_topic
     topic = Topic.where(["name = ?", params[:topic_name]])
     session[:topics] << topic.id
-    if params[:timestamp].blank?
+    if params[:since].blank?
       render :success
     else
-      @links = Link.build_filter_scope(session).order("created_at DESC").where(["created_at > ? AND topic_id = ?", params[:timestamp], topic.id]).all
+      @links = Link.build_filter_scope(session).order("created_at DESC").where(["created_at > ? AND topic_id = ?", params[:since], topic.id]).all
       render :partial => "links"
     end
   end
@@ -32,11 +33,13 @@ class HomeController < ApplicationController
   end
 
   def add_filter
-
+    session[:filters]. << Link::Filters[params[:filter_name]]
+    render :success
   end
 
   def remove_filter
-    session_filters
+    session[:filters].delete(Link::Filters[params[:filter_name]])
+    render :success
   end
 
   private
