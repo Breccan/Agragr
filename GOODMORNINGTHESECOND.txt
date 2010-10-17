@@ -1,0 +1,29 @@
+hello
+
+news has a class called recent for the recent news, just a background change, quite subtle depending on your monitor contrast.
+
+have added an about box but not styled, maybe its ok as it is, also depends on what (if anything) is going in there.
+
+have styled the pagination
+
+all topics are in correct colour order
+
+it would be good if the news hover was smoother is that possible? maybe with a quick ease transition?
+
+meta description needs to be filled in
+
+I have updated our team page with my list of resources
+
+Peace! :)
+
+Kelly
+
+
+Hi Michelle,
+Things that need doing:
+Make the new posts appear at the top rather than the bottom, I think this'll also fix the current issue with it find new posts over and over again after it starts findthings.
+Make the add and remove topics and filters point at their appropriate URLs, at the moment they're sending URL as a parameter instead of postin to it, which doesn't work.
+
+I did a moderate job of the links(came to the realization that the majority of the time you won't see something with lots of links because it will have scrolled off the front page) and added metafilter and fark. Also, redid the importer for much more generecization so we can add more easily.
+See you in a few hours,
+Breccan
