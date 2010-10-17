@@ -4,13 +4,16 @@ class Link < ActiveRecord::Base
   has_many :listings
 
   Filters = {
-    :images  => 'images',
-    :youtube => "youtube",
-    :dae     => '"does anyone else..."',
+    :memes   => 'overused memes',
+    :dae     => '"does anyone else"',
     :pets    => '"my dog", "my cat"',
-    :dating  => '"my girlfriend..."',
+    :dating  => '"my girlfriend"',
     :tweets  => 'headline only',
-    :nsfw    => 'nsfw',
+    :images  => 'image only',
+    :video   => "video links",
+    :self    => 'self posts',
+    :fuck    => 'naughty words',
+    :nsfw    => 'adult content',
   }
 
   scope :exlude_nsfw, lambda {
