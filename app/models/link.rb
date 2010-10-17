@@ -17,10 +17,10 @@ class Link < ActiveRecord::Base
   }
 
   scope :exclude_nsfw, lambda {
-    joins(:listings => :reddit_listings).where(["reddit_listings.nsfw = ?", false])
+    joins(:listings).joins("LEFT OUTER JOIN reddit_listings ON listings.id = reddit_listings.listing_id").where(["reddit_listings.nsfw = ? OR reddit_listings.nsfw IS NULL", false])
   }
   scope :exclude_self, lambda {
-    joins(:listings => :reddit_listings).where(["reddit_listings.self = ?", false])
+    joins(:listings).joins("LEFT OUTER JOIN reddit_listings ON listings.id = reddit_listings.listing_id").where(["reddit_listings.self = ? OR reddit_listings.self IS NULL", false])
   }
   scope :exclude_images, lambda {
     where(["links.url NOT #{LIKE} ? AND links.url NOT #{LIKE} ?", '%jpg', '%png' ])
@@ -42,6 +42,9 @@ class Link < ActiveRecord::Base
   }
   scope :exclude_memes, lambda {
     where(["links.title NOT #{LIKE} ?", '%keanu%' ])
+  }
+  scope :tweets, lambda {
+    where(["links.url NOT #{LIKE} ?", '%twitter.com%' ])
   }
   scope :limit_topics, lambda { |topic_ids|
     where("links.topic_id IN (#{topic_ids.join(', ')})")
