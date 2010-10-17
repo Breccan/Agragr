@@ -42,6 +42,7 @@ nav ul li.disabled a { color: #888; }
 .news_content { overflow: hidden; position: relative; padding-left: 10px;}
 .news img.thumb { display:none;}
 .news:hover img.thumb { float: right; border: 1px solid #ddd; padding: 4px; background: #fff; margin-right: 3%; }
+.news .loaded-stamp { display:none; }
 .community {  color: rgba(232, 33, 71, .80); }
 .entertainmnet {  color: rgba(237, 227, 29,.80); }
 .funny {  color: rgba(181, 237,29, .80); }
