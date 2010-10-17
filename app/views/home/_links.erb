@@ -1,5 +1,5 @@
 <% @links.each do |post| %>
-  <div class="news topic-<%= post.topic.name %> recent clearfix"> <!-- colour classes = one for each topic + either 'recent' or not -->
+  <div class="news topic-<%= post.topic.name %> clearfix"> <!-- colour classes = one for each topic + either 'recent' or not -->
     <!--div class="stats grid_1"> 123 </div-->
   <span class="loaded-stamp"><%=post.created_at.to_i%></span>
     <div class="news_content">

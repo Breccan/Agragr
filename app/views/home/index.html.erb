@@ -1,11 +1,13 @@
 <div class="grid_9" id="news-list">
   <%= will_paginate @links, :next_label => image_tag('/images/right_arrow.png', :class => 'arrow'), :previous_label => image_tag('/images/left_arrow.png', :class => 'arrow')  %>
   
+  <div id="news-items">
   <% if (@links.length==0) %>
     There's nothing here.
   <% elsif %>
     <%= render :partial => 'links' %>
   <% end %>
+  </div>
 
 </div>
 
