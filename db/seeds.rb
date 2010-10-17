@@ -27,7 +27,7 @@ end
     feed = Feed.create(:name => source[:name],
                 :harvest_strategy => source[:harvest_strategy],
                 :url => source[:url])
-    topic = Topic.where("name = ?", source[:topic_name])
+    topic = Topic.where("name = ?", source[:topic_name]).first
     feed.topic = topic
     feed.save
   end
