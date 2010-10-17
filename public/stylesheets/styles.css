@@ -109,10 +109,10 @@ top:5px; overflow: hidden; height: 16px; display: inline-block; }
 #about p { line-height: 17px; color: #555; }
 #about img { position:absolute; right: -23px; top: -21px; }
 
+#vote { padding: 10px 10px 10px 21px }
 
 .four04 { background: url('/images/404.gif') no-repeat 0 55px; height: 360px; }
 .four22 { background: url('/images/422.gif') no-repeat 0 55px; height: 360px; }
 .five00 { background: url('/images/500.gif') no-repeat 0 55px; height: 360px; }
 
-footer { position: relative; display: block; height: 23px; margin-top: -23px; background: #f2f2f2; color: #555; font-size: .8em; text-align: center; border-top:1px solid #ddd; }
-#vote { position: absolute; top: -81px; right: 10px; }
+#footer { position: relative; display: block; height: 23px; margin-top: -23px; background: #f2f2f2; color: #555; font-size: .8em; text-align: center; border-top:1px solid #ddd; }
