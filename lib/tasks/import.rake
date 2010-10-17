@@ -14,6 +14,8 @@ namespace :import do
         unless Listing.where(["feed_id = ? AND url = ?", source.id, item["url"]]).first
           listing = Listing.create(:feed => source,
                                    :url => item["url"],
+                                   :comments_url => "http://reddit.com#{item['permalink']}",
+                                   :type => source.type,
                                    :title => item["title"])
 
           RedditListing.create(:listing => listing,
@@ -39,9 +41,26 @@ namespace :import do
     listings.each do |item|
       unless Listing.where(["feed_id = ? AND url = ?", source.id, item.css('link').first.content]).first
         listing = Listing.create(:feed => source,
+                                 :type => source.type,
                                  :title => item.css('title').first.content,
                                  :url => item.css('link').first.content,
                                  :comments_url => item.css('comments').first.content)
+      end
+    end
+  end
+
+  desc 'import rss'
+  task :rss => :environment do 
+    Feed.where(["harvest_strategy = ?", "rss"]).all.each do |source|
+      doc = Nokogiri::XML(open(source.url))
+      listings = doc.css('item')
+      listings.each do |item|
+        unless Listing.where(["feed_id = ? AND url = ?", source.id, item.css('link').first.content]).first
+          listing = Listing.create(:feed => source,
+                                   :type => source.type,
+                                   :title => item.css('title').first.content,
+                                   :url => item.css('link').first.content)
+        end
       end
     end
   end
