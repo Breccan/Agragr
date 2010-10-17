@@ -6,7 +6,7 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-['worldnews', 'science', 'tech', 'programming', 'entertainment', 'funny', 'community', 'hobbies'].each do |topic|
+['news', 'popculture', 'funny', 'science', 'tech', 'code', 'hobbies', 'personal'].each do |topic|
     Topic.create(:name => topic)
 end
 
@@ -19,7 +19,7 @@ end
   },
   { :name => "r-programming",
     :url => 'http://www.reddit.com/r/programming.json',
-    :topic_name => 'programming',
+    :topic_name => 'code',
     :harvest_strategy => "reddit" 
   }
 ].each do |source|
