@@ -1,5 +1,5 @@
 <div class="grid_9" id="news-list">
-  <%= will_paginate @links %>
+  <%= will_paginate @links, :next_label => image_tag('/images/right_arrow.png', :class => 'arrow'), :previous_label => image_tag('/images/left_arrow.png', :class => 'arrow')  %>
   
   <% if (@links.length==0) %>
     There's nothing here.
@@ -26,7 +26,13 @@
         <li><a id="<%=id%>" href="#"><%=name%></a></li>
       <% end %>
     </ul>
-    <p>Add everything you hate to the list above and we'll keep it off your page.</p>
+    <p class="help">Add everything you hate to the list above and we'll keep it off your page.</p>
   </div>
 <img src="/images/logo.png" alt="Agragr" id="logo" />
+
+	<div id="about">
+Bah - inset about message here
+	</div>
+
 </div>
+
