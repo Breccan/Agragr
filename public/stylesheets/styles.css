@@ -43,7 +43,7 @@ nav ul li.disabled a { color: #888; }
 
 #content .news h2 a { color: #333; }
 #content .news .domain{ font-size: .7em;  text-shadow: 0px 1px 0px #fff; color: #777; }
-.recent { background-color: #DBDBDB; }
+#content .recent { background-color: #DBDBDB; }
 
 .news_content { overflow: hidden; position: relative; padding-left: 10px;}
 .news img.thumb { display:none;}
@@ -99,4 +99,4 @@ nav ul li.disabled a { color: #888; }
 .four22 { background: url('/images/422.gif') no-repeat 0 55px; height: 360px; }
 .five00 { background: url('/images/500.gif') no-repeat 0 55px; height: 360px; }
 
-footer { display: block; height: 23px; margin-top: -23px; background: #f2f2f2; color: #555; font-size: .8em; text-align: center; }
+footer { display: block; height: 23px; margin-top: -23px; background: #f2f2f2; color: #555; font-size: .8em; text-align: center; border-top:1px solid #ddd; }
