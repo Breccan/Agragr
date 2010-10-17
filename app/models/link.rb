@@ -30,7 +30,7 @@ class Link < ActiveRecord::Base
   }
 
   def self.build_filter_scope(prefs)
-    combined_scope = order('links.created_at DESC').includes(:topic)
+    combined_scope = order('links.created_at DESC').includes(:topic).includes(:listings)
     combined_scope = load_filter_scopes(prefs[:filters], combined_scope)
     combined_scope.limit_topics(prefs[:topics])
   end
@@ -42,6 +42,13 @@ class Link < ActiveRecord::Base
       combined_scope = combined_scope[k]
     end
    combined_scope 
+  end
+
+  def url_count(feed_type)
+    self.listings.where(["feed_type = ?", feed_type]).count
+  end
+  def url_targets(feed_type)
+    self.listings.where(["feed_type = ?", feed_type]).all.collect { |l| l.comments_url }
   end
 
 

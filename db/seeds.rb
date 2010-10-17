@@ -85,8 +85,8 @@ end
     :type => "mefi"
   },
   { :name => "fark",
-    :url => 'http://www.fark.com/fark.rss'
-    :topic_name => 'news',
+    :url => 'http://www.fark.com/fark.rss',
+    :topic_name => 'pop',
     :harvest_strategy => "rss",
     :type => "fark"
   },
@@ -100,7 +100,7 @@ end
   unless Feed.where(["name = ?", source[:name]]).first
     feed = Feed.create(:name => source[:name],
                 :harvest_strategy => source[:harvest_strategy],
-                :type => source[:type],
+                :feed_type => source[:type],
                 :url => source[:url])
     topic = Topic.where("name = ?", source[:topic_name]).first
     feed.topic = topic

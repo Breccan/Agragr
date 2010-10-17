@@ -5,10 +5,10 @@
     <div class="news_content">
       <h2><%= link_to raw(post.title), post.url %> <span class="domain"><%= post.domain %></span></h2>
         <div class="post-counts">
-          <a class="reddit" href="#">4</a>
-          <a class="ynews" href="#">1</a>
-          <a class="fark" href="#">1</a>
-          <a class="mefi" href="#">2</a>
+          <%= link_with_count "reddit", post %>
+          <%= link_with_count "ynews", post %>
+          <%= link_with_count "fark", post %>
+          <%= link_with_count "mefi", post %>
         </div>
     </div>
   </div>
