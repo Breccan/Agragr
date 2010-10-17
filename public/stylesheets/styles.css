@@ -15,7 +15,7 @@ a:hover { text-decoration: underline; }
 #header { background: #fff; height: 10px; min-width: 770px; }
 #header h2 { text-shadow: none; color: #fff; }
 
-#logo { position:absolute; right: 20px; top: 15px; }
+#logo { position:absolute; right: 20px; top: 22px; }
 
 #topic_wrapper, ul#topics { margin: 0; }
 
@@ -31,7 +31,7 @@ nav ul li.science 	{ background: #51EB49; background: rgba(98, 226, 84, .75); } 
 nav ul li.tech 		{ background: #4DE5C8; background: rgba(36, 226, 190, .75); }  /* turq*/
 nav ul li.code		{ background: #47E2EE; background: rgba(29, 222, 237, .75); } /* light blue */
 nav ul li.hobby		{ background: #4AADEA; background: rgba(33, 156, 232, .75); }  /* blue*/
-nav ul li.personal	{ background: #4F7DE3; background: rgba(75, 128, 221, .75); }  /* deep blue*/
+nav ul li.personal	{ background: #4F7DE3; background: rgba(44, 115, 219, .75); }  /* deep blue*/
 
 nav ul li.disabled { background: #dddddd; background: rgba(190, 190,190, .50);  }
 nav ul li.disabled a { color: #888; }
@@ -58,7 +58,7 @@ nav ul li.disabled a { color: #888; }
 .topic-tech			{ color: #4DE5C8; color: rgba(36, 226, 190, .75); } /* turq */
 .topic-code			{ color: #47E2EE; color: rgba(29, 222, 237, .75); } /* light blue */
 .topic-hobby		{ color: #4AADEA; color: rgba(33, 156, 232, .75); } /* blue */
-.topic-personal		{ color: #4F7DE3; color: rgba(75, 128, 221, .75); } /* deep blue */
+.topic-personal		{ color: #4F7DE3; color: rgba(44, 115, 219, .75); } /* deep blue */
 
 .stats { border: 1px solid #d1d1d1; left: -32px; top: 2px; background: #fff; padding: 3px; text-align: center; color: #6b6b6b; font-size: .8em; }
 
@@ -80,7 +80,7 @@ nav ul li.disabled a { color: #888; }
 .close_btn { float: right; z-index: 2; position: absolute; right: 5px; display: none; }
 .news:hover span.close_btn { display: inline; }
 
-#filter { margin-top: 48px; background: url('/images/filter_bg.png') repeat-x #EEEDED; padding: 10px; border: 1px solid #ddd; color: #777; text-shadow: 0px 1px 0px #fff; }
+#filter { margin-top: 57px; background: url('/images/filter_bg.png') repeat-x #EEEDED; padding: 10px; border: 1px solid #ddd; color: #777; text-shadow: 0px 1px 0px #fff; }
 #filter form { margin-bottom: 15px; }
 #filter form label { color: #5b5b5b; display: block; }
 #filter ul li { position: relative; display: inline-block; font-size: .9em;  border: 1px solid #ddd; padding: 2px 10px 2px 10px; margin: 0px 3px 5px 0px; 
