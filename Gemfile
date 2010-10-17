@@ -11,11 +11,11 @@ gem 'will_paginate', '~> 3.0.beta'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem "rspec-rails",        :git => "git://github.com/rspec/rspec-rails.git"
-gem "rspec",              :git => "git://github.com/rspec/rspec.git"
-gem "rspec-core",         :git => "git://github.com/rspec/rspec-core.git"
-gem "rspec-expectations", :git => "git://github.com/rspec/rspec-expectations.git"
-gem "rspec-mocks",        :git => "git://github.com/rspec/rspec-mocks.git"
+gem "rspec-rails"
+gem "rspec"
+gem "rspec-core"
+gem "rspec-expectations"
+gem "rspec-mocks"
 #gem "devise", '1.1.2'
 
 
