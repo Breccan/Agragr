@@ -40,7 +40,7 @@ class HomeController < ApplicationController
   end
 
   def remove_filter
-    session[:filters].delete(params[:filter_name])
+    session[:filters].delete(params[:filter_name].to_sym)
     render :nothing => true
   end
 
