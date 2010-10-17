@@ -81,7 +81,6 @@ if ($('filter')) {
 var active = true;
 var originalTitle = '';
 var addUnread = function(n) {
-  console.log(n+" unread.");
   if (active) { return; }
   if (n<1) { return; }
   var match  = document.title.match(/\((.*)\)$/);
@@ -95,7 +94,10 @@ var addUnread = function(n) {
 clearUnread = function() {
   active = true;
   document.title = document.title.replace(/\((.*)\)$/, '').trim();
-  $$('.recent').set('tween', {'duration':'long'}).tween('background-color', '#ededed');
+  (function() {
+    $$('.recent').set('tween', {'duration':'long'})
+                 .tween('background-color', '#ededed');
+  }).delay(10000);
 }
 
 /* Clear the unread items when the window is focused. */
