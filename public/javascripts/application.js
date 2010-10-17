@@ -24,14 +24,10 @@ var addLinks = function(tree,els) {
     stamp = new Number(stamp.get('text'));
     if (latestStamp < stamp) {
       latestStamp = stamp;
-    } else {
-      console.log(latestStamp +">"+ new Number(stamp));
-    }
-    return true;
+    } return true;
   });
 
   news.inject($('news-items'), 'top');
-  console.log(news);
   news.addClass('recent');
   addUnread(news.length);
 
@@ -64,6 +60,7 @@ if ($('topics')) {
   };
 
   $('topics').addEvent('click', function(e) {
+    e.stop();
     var target = e.target;
     if (target.get('tag')!='a') { return; }
     var li   = target.getParent('.topic');
