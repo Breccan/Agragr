@@ -21,6 +21,56 @@ end
     :url => 'http://www.reddit.com/r/programming.json',
     :topic_name => 'code',
     :harvest_strategy => "reddit" 
+  },
+  { :name => "r-ruby",
+    :url => 'http://www.reddit.com/r/ruby.json',
+    :topic_name => 'code',
+    :harvest_strategy => "reddit" 
+  },
+  { :name => "r-iama",
+    :url => 'http://www.reddit.com/r/iama.json',
+    :topic_name => 'personal',
+    :harvest_strategy => "reddit" 
+  },
+  { :name => "r-self",
+    :url => 'http://www.reddit.com/r/self.json',
+    :topic_name => 'personal',
+    :harvest_strategy => "reddit" 
+  },
+  { :name => "r-worldnews",
+    :url => 'http://www.reddit.com/r/worldnews.json',
+    :topic_name => 'news',
+    :harvest_strategy => "reddit" 
+  },
+  { :name => "r-pop",
+    :url => 'http://www.reddit.com/.json',
+    :topic_name => 'pop',
+    :harvest_strategy => "reddit" 
+  },
+  { :name => "r-tech",
+    :url => 'http://www.reddit.com/r/technology.json',
+    :topic_name => 'tech',
+    :harvest_strategy => "reddit" 
+  },
+  { :name => "r-science",
+    :url => 'http://www.reddit.com/r/science.json',
+    :topic_name => 'science',
+    :harvest_strategy => "reddit" 
+  },
+  { :name => "r-gaming",
+    :url => 'http://www.reddit.com/r/gaming.json',
+    :topic_name => 'games',
+    :harvest_strategy => "reddit" 
+  },
+  { :name => "r-food",
+    :url => 'http://www.reddit.com/r/food.json',
+    :topic_name => 'hobby',
+    :harvest_strategy => "reddit" 
+  },
+  { :name => "r-funny",
+    :url => 'http://www.reddit.com/r/funny.json',
+    :topic_name => 'funny',
+    :harvest_strategy => "reddit" 
   }
 ].each do |source|
   unless Feed.where(["name = ?", source[:name]]).first

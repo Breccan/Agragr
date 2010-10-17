@@ -6,7 +6,7 @@ namespace :import do
 
   desc 'import a reddit json feed pass source name with NAME=source'
   task :reddit => :environment do
-    if source = Feed.where(["name = ?", ENV['NAME']]).first
+    Feed.where(["harvest_strategy = ?", "reddit"]).all.each do |source|
       doc = open(source.url).read
       json = JSON.parse(doc)
       json["data"]["children"].each do |item|
@@ -17,18 +17,17 @@ namespace :import do
                                    :title => item["title"])
 
           RedditListing.create(:listing => listing,
-                                :nsfw => item["over18"] == "true" ? true : false,
-                                :self => item["is_self"] == "true" ? true : false,
-                                :author => item["author"],
-                                :num_comments => item["num_comments"],
-                                :ups => item["ups"],
-                                :downs => item["downs"],
-                                :subreddit => item["subreddit"],
-                                :selftext => item["selftext"])
+                               :nsfw => item["over18"] == "true" ? true : false,
+                               :self => item["is_self"] == "true" ? true : false,
+                               :author => item["author"],
+                               :num_comments => item["num_comments"],
+                               :ups => item["ups"],
+                               :downs => item["downs"],
+                               :subreddit => item["subreddit"],
+                               :selftext => item["selftext"])
         end
       end
-    else
-      puts "source not found"
+      sleep(1)
     end
   end
 
@@ -55,7 +54,7 @@ namespace :import do
         listing.save
       else
         link = Link.create(:title => listing.title,
-                    :url => listing.url)
+                           :url => listing.url)
         link.topic_id = listing.feed.topic_id
         link.save
         listing.link = link

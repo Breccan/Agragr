@@ -48,14 +48,14 @@ class HomeController < ApplicationController
   private
   def set_filters
     if session[:filters].blank?
-      session[:filters] = [Link::Filters[:nsfw]]
+      session[:filters] = [:nsfw]
     end
     @active_filters = get_filters(session[:filters])
   end
   
   def get_filters(filters)
-    inverted_filters = Link::Filters.invert
-    filters.collect { |f| inverted_filters[f] }
+    filters = filters.collect { |f| [f, Link::Filters[f]] }
+    Hash[*filters.flatten]
   end
 
   def set_topics

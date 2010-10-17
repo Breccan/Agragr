@@ -30,7 +30,7 @@ class Link < ActiveRecord::Base
   }
 
   def self.build_filter_scope(prefs)
-    combined_scope = order('links.created_at DESC')
+    combined_scope = order('links.created_at DESC').includes(:topic)
     combined_scope = load_filter_scopes(prefs[:filters], combined_scope)
     combined_scope.limit_topics(prefs[:topics])
   end
