@@ -5,6 +5,7 @@ class HomeController < ApplicationController
 
   def index
     @links = Link.build_filter_scope(session).paginate :page => params[:page], :order => 'created_at DESC'
+    @topics = Topics.all
     #request.xhr
   end
 

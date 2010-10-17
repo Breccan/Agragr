@@ -24,11 +24,12 @@ end
   }
 ].each do |source|
   unless Feed.where(["name = ?", source[:name]]).first
-    Feed.create(:name => source[:name],
+    feed = Feed.create(:name => source[:name],
                 :harvest_strategy => source[:harvest_strategy],
                 :url => source[:url])
     topic = Topic.where("name = ?", source[:topic_name])
-    
+    feed.topic = topic
+    feed.save
   end
 end
 
