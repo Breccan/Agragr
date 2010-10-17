@@ -69,7 +69,7 @@ top:5px; overflow: hidden; height: 16px; display: inline-block; }
 
 .stats { border: 1px solid #d1d1d1; left: -32px; top: 2px; background: #fff; padding: 3px; text-align: center; color: #6b6b6b; font-size: .8em; }
 
-.news h2 { height: 20px; }
+.news h2 { height: 24px; }
 .news:hover h2 { height: auto; }
 .news .post-counts { display: none; }
 .news:hover .post-counts { display: block; height: 25px; margin-top: 3px; }
