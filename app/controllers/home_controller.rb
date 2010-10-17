@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     @filters = Link::Filters
     if request.xhr?
       params[:since] ||= 2.days.ago
-      @links = Link.build_filter_scope(session).order("created_at DESC").where(["created_at > ?", params[:since]]).all
+      @links = Link.build_filter_scope(session).order("created_at DESC").where(["created_at > ?", params[:since].to_i]).limit(35).all
       render :partial => "links"
     else
       @links = Link.build_filter_scope(session).paginate :page => params[:page], :order => 'created_at DESC'
