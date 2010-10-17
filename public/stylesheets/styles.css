@@ -87,7 +87,7 @@ top:5px; overflow: hidden; height: 16px; display: inline-block; }
 .close_btn { float: right; z-index: 2; position: absolute; right: 5px; display: none; }
 .news:hover span.close_btn { display: inline; }
 
-#filter { z-index: 10; margin-top: 57px; background: url('/images/filter_bg.png') repeat-x #EEEDED; padding: 10px; border: 1px solid #ddd; color: #777; text-shadow: 0px 1px 0px #fff; }
+#filter, #about { z-index: 10; margin-top: 57px; background: url('/images/filter_bg.png') repeat-x #EEEDED; padding: 10px; border: 1px solid #ddd; color: #777; text-shadow: 0px 1px 0px #fff; }
 #filter form { margin-bottom: 15px; }
 #filter form label { color: #5b5b5b; display: block; }
 
@@ -104,8 +104,10 @@ top:5px; overflow: hidden; height: 16px; display: inline-block; }
 #filter ul li:hover span { display: inline; }
 #filter p.help { line-height: 17px; font-size: 12px; }
 
-#about { padding: 10px; margin-top: 15px; }
-
+#about { padding: 10px; margin-top: 23px; position: relative; }
+#about h3 { color: #555; }
+#about p { line-height: 17px; color: #555; }
+#about img { position:absolute; right: -23px; top: -42px; }
 
 
 .four04 { background: url('/images/404.gif') no-repeat 0 55px; height: 360px; }
