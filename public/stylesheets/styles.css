@@ -17,10 +17,10 @@ nav ul li { float: left; margin-right: -10px; padding: 10px 20px; background: #E
 nav ul li a { color: #2b2b2b; }
 nav ul li.community { background: #ED4D6C; background: rgba(232, 33, 71, .80); } /* pink */
 nav ul li.entertainment { background: #F1E94A; background: rgba(237, 227, 29,.80); } /* yellow*/
-nav ul li.funny { background: #C4F14A; background: rgba(181, 237,29, .80); } /* green */
-nav ul li.programming {  background: rgba(29, 222,237, .80); } /* light blue */
-nav ul li.science { background: rgba(36, 226,190, .80); }  /* turq*/
-nav ul li.technology { background: rgba(234, 170,10, .80); }  /* orange*/
+nav ul li.funny{ background: rgba(234, 170,10, .80); } /* orange */
+nav ul li.programming  { background: #C4F14A; background: rgba(181, 237,29, .80); } /* green */
+nav ul li.science {  background: rgba(29, 222,237, .80); } /* light blue */
+nav ul li.technology { background: rgba(36, 226,190, .80); }  /* turq*/
 nav ul li.worldnews {  background: rgba(33, 156,232, .80); }  /* blue*/
 
 nav ul li.disabled { background: #dddddd; background: rgba(190, 190,190, .50);  }
