@@ -90,5 +90,6 @@ nav ul li.disabled a { color: #888; }
 #filter ul li:hover span { display: inline;  }
 
 .four04 { background: url('/images/404.gif') no-repeat 0 55px; height: 360px; }
+.four22 { background: url('/images/422.gif') no-repeat 0 55px; height: 360px; }
 
 footer { display: block; height: 23px; margin-top: -23px; background: #f2f2f2; color: #555; font-size: .8em; text-align: center; }
