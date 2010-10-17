@@ -55,7 +55,7 @@ top:5px; overflow: hidden; height: 16px; display: inline-block; }
 .news_content { overflow: hidden; position: relative; padding-left: 10px;}
 .news img.thumb { display:none;}
 .news:hover img.thumb { float: right; border: 1px solid #ddd; padding: 4px; background: #fff; margin-right: 3%; }
-.news .loaded-stamp { display:none; }
+.loaded-stamp { display:none; }
 
 .topic-news			{ color: #EA4A69; color: rgba(232, 33, 71, .75); } /* pink*/
 .topic-pop			{ color: #EBB838; color: rgba(234, 170, 10, .75); } /* orange */
