@@ -14,14 +14,14 @@
     <form action="" method="">
       <label>Don't show:</label>
       <select id="filter-list">
-        <% @filters.each do |name,id| %>
+        <% @filters.each do |id,name| %>
           <option value="<%=id%>"><%=name%></option>
         <% end %>
       </select>
       <input type="submit" value="add" />
     </form>
     <ul id="selected-filters">
-      <% @active_filters.each do |name,id| %>
+      <% @active_filters.each do |id,name| %>
         <li><a id="<%=id%>" href="#"><%=name%></a></li>
       <% end %>
     </ul>
