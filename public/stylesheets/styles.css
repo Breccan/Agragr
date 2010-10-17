@@ -12,10 +12,12 @@ a:hover { text-decoration: underline; }
 #wrap { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -23px; } /* sticky footer */
 .top_links { font-size: .9em; }
 
-#header { background: #4b4b4b; padding: 10px; }
+#header { background: #4b4b4b; padding: 10px; min-width: 770px; }
 #header h2 { text-shadow: none; color: #fff; }
+
 #logo { position:absolute; right:20px; top:10px; }
 
+#topic_wrapper, ul#topics { margin: 0; }
 nav { margin-bottom: 12px; background: #f2f2f2; }
 nav ul li { float: left; margin-right: -10px; padding: 10px 20px; background: #ED4D6C; background: rgba(232, 33, 71, .80); text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
 nav ul li a { color: #2b2b2b; }
@@ -84,5 +86,7 @@ nav ul li.disabled a { color: #888; }
 #filter ul li:hover { -moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2); background: -moz-linear-gradient(center top , #FFFFFF, #EDEDED); 
 					border: 1px solid #ddd; color: #4b4b4b; }
 #filter ul li:hover span { display: inline;  }
+
+.four04 { background: url('/images/404.jpg') no-repeat; }
 
 footer { display: block; height: 23px; margin-top: -23px; background: #444; color: #d7d7d7; font-size: .8em; text-align: center; }
