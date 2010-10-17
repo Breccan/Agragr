@@ -89,8 +89,10 @@ nav ul li.disabled a { color: #888; }
 #filter ul li:hover { -moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2); background: -moz-linear-gradient(center top , #FFFFFF, #EDEDED); 
 					border: 1px solid #ddd; color: #4b4b4b; }
 #filter ul li:hover span { display: inline;  }
+#filter p { line-height: 17px; }
 
 .four04 { background: url('/images/404.gif') no-repeat 0 55px; height: 360px; }
 .four22 { background: url('/images/422.gif') no-repeat 0 55px; height: 360px; }
+.five00 { background: url('/images/500.gif') no-repeat 0 55px; height: 360px; }
 
 footer { display: block; height: 23px; margin-top: -23px; background: #f2f2f2; color: #555; font-size: .8em; text-align: center; }
