@@ -6,7 +6,7 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-['news', 'popculture', 'funny', 'science', 'tech', 'code', 'hobbies', 'personal'].each do |topic|
+['news', 'pop', 'funny', 'games', 'science', 'tech', 'code', 'hobby', 'personal'].each do |topic|
     Topic.create(:name => topic)
 end
 
