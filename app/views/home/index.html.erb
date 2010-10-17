@@ -6,12 +6,12 @@
       <!--div class="stats grid_1"> 123 </div-->
       <div class="news_content">
         <h2><%= link_to post.title, post.url %> <span class="domain">newsweek.com</span></h2>
-   <div class="post-counts">
-          <a class="reddit" href="#">4</a>
-          <a class="ynews" href="#">1</a>
-          <a class="fark" href="#">1</a>
-          <a class="mefi" href="#">2</a>
-        </div>
+          <div class="post-counts">
+            <a class="reddit" href="#">4</a>
+            <a class="ynews" href="#">1</a>
+            <a class="fark" href="#">1</a>
+            <a class="mefi" href="#">2</a>
+          </div>
 
         <!--p class="sources">posted 4 times - <a href="#">reddit</a> (<a href="#">3</a>) <a href="#">Hacker News</a> (1)</p-->
       </div>
@@ -25,21 +25,20 @@
   <div id="filter">
     <form action="" method="">
       <label>Don't show:</label>
-      <select>
-        <option>headline only</option>
-        <option>self posts</option>
-        <option>videos</option>
-        <option>pictures</option>
-        <option>does anyone else...</option>
-        <option>"my dog", "my cat"</option>
-        <option>"my girlfriend"</option>
+      <select id="filter-list">
+        <option value="headline">headline only</option>
+        <option value="self">self posts</option>
+        <option value="videos">videos</option>
+        <option value="pictures">pictures</option>
+        <option value="dae">does anyone else...</option>
+        <option value="pets">"my dog", "my cat"</option>
+        <option value="girlfriend">"my girlfriend"</option>
+        <option value="nsfw">nsfw</option>
         <option>custom filter...</option>
       </select>
-      <a href="">add</a>
+      <input type="submit" value="add" />
     </form>
-    <ul>
-      <li><a href="#">filtered thing <span><img src="/images/icons/remove_filter.png" alt="remove"/></span></a></li> <!-- click to remove filters -->
-      <li><a href="#">another <span><img src="/images/icons/remove_filter.png" alt="remove"/></span></a></li>
+    <ul id="selected-filters">
     </ul>
   </div>
 </div>
