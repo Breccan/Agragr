@@ -3,17 +3,11 @@
 <head>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
-	<title>Agragr</title>
+	<title>Agragr - Aggregating your aggregators</title>
 	<%= stylesheet_link_tag "/stylesheets/reset.css" %>
 	<%= stylesheet_link_tag "/stylesheets/styles.css" %>
 	<%= stylesheet_link_tag "/stylesheets/960.css" %>
 	<%= csrf_meta_tag %>
-	<script type="text/javascript">
-	  var rumbleUrl = 'http://railsrumble.com';
-	</script>
-	<script type="text/javascript" src="/javascripts/rumble-r10-sash.js"></script>
-	<script type="text/javascript" src="/javascripts/mootools-core-1.3.js"> </script>
-</head>
 <body>
 	<div id="wrap">
 		<!--div id="top_links">
@@ -21,15 +15,15 @@
 		</div-->
 		<div id="header">
 				<h1 style="display:none">Agragr</h1>
-				<h2>We aggregated your aggregators so you can slack off while you slack off.</h2>
+				<h2 style="display: none">We aggregated your aggregators so you can slack off while you slack off.</h2>
+				<img src="/images/logo.png" alt="Agragr" id="logo" />
 		</div>
-		<img src="/images/logo.png" alt="Agragr" id="logo" />
+
 		<nav class="clearfix">
 			<ul id="topics">
       <% @topics.each do |topic| %>
 				<li id="<%=topic.name%>" class="topic <%= topic.name %> <%= (topic.disabled(session)) ? 'disabled' : '' %>"><a href="#"><%=topic.name%></a></li>
       <% end %>
-
 			</ul>
 		</nav>
 
@@ -37,9 +31,7 @@
 			<%= yield %>
 		</div>
 	</div>
-	<footer>
-		© 2010 | made for Rails Rumble 2010
-	</footer>
+<footer>&copy; 2010 | made for <a href="http://railsrumble.com">Rails Rumble 2010</a> | team <a href="http://railsrumble.com/teams/electric-sheep">Electric Sheep</a></footer>
   <%= javascript_include_tag :defaults %>
 </body>
 </html>
