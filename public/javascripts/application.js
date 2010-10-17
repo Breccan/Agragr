@@ -6,6 +6,7 @@ var Req = ({
 
   send: function(path, params) {
     if (!path.match(/^\//)) { path = '/'+path; }
+    if (!params) { params = {}; }
     params.url = path;
     this.reqObj.post(params);
   }
@@ -55,6 +56,7 @@ if ($('filter')) {
   $('selected-filters').addEvent('click', function(e) {
     e.stop();
     if (e.target.get('tag')=='a') {
+      var name = e.target.get('id');
       e.target.getParent('li').dispose();
       Req.send('filter/disable/'+name);
     }
