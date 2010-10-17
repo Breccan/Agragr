@@ -1,6 +1,9 @@
 <div class="grid_9" id="news-list">
   <%= will_paginate @links %>
   
+  <% if (@links.length==0) %>
+    There's nothing here.
+  <% elsif %>
   <% @links.each do |post| %>
     <div class="news topic4 recent clearfix"> <!-- colour classes = one for each topic + either 'recent' or not -->
       <!--div class="stats grid_1"> 123 </div-->
@@ -17,6 +20,7 @@
       </div>
       <img src="/images/placeholder.jpg" class="thumb" width="70px" height="70px" alt="placeholder" title="placeholder"/>
     </div>
+  <% end %>
   <% end %>
 
 </div>
