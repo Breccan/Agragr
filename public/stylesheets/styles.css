@@ -24,14 +24,14 @@ nav ul li { float: left; margin-right: -10px; padding: 10px 20px; background: #E
 nav ul li a { color: #2b2b2b; }
 
 nav ul li.news		{ background: #EA4A69; background: rgba(232, 33, 71, .80); } /* pink */
-nav ul li.popculture		{ background: #EEE647; background: rgba(237, 227, 29,.80); } /* yellow*/
+nav ul li.popculture{ background: #EEE647; background: rgba(237, 227, 29,.80); } /* yellow*/
 nav ul li.funny		{ background: #EBB838; background: rgba(234, 170, 10, .80); } /* orange */
 nav ul li.games		{ background: #C1EE47; background: rgba(181, 237, 29, .80); } /* green */
 nav ul li.science 	{ background: #47E2EE; background: rgba(29, 222, 237, .80); } /* light blue */
 nav ul li.tech 		{ background: #4DE5C8; background: rgba(36, 226, 190, .80); }  /* turq*/
 nav ul li.code		{ background: #4AADEA; background: rgba(33, 156, 232, .80); }  /* blue*/
-nav ul li.hobbies		{ background: rgba(41, 234, 31, .80); }  /* bright green */
-nav ul li.personal	{ background: rgba(39, 96, 224, .80); }  /* deep blue*/
+nav ul li.hobbies	{ background: #51EB49; background: rgba(41, 234, 31, .80); }  /* bright green */
+nav ul li.personal	{ background: #4F7DE3; background: rgba(39, 96, 224, .80); }  /* deep blue*/
 
 nav ul li.disabled { background: #dddddd; background: rgba(190, 190,190, .50);  }
 nav ul li.disabled a { color: #888; }
@@ -51,15 +51,15 @@ nav ul li.disabled a { color: #888; }
 .news:hover img.thumb { float: right; border: 1px solid #ddd; padding: 4px; background: #fff; margin-right: 3%; }
 .news .loaded-stamp { display:none; }
 
-.topic-news{  color: rgba(232, 33, 71, .80); }
-.topic-popculture {  color: rgba(237, 227, 29,.80); }
-.topic-funny {  color: rgba(181, 237,29, .80); }
-.topic-games{ color: rgba(29, 222,237, .80); }
-.topic-science {  color: rgba(36, 226,190, .80); }
-.topic-tech{ rgba(234, 170,10, .80); }
-.topic-code{ color: rgba(33, 156,232, .80); }
-.topic-hobbies{ color: rgba(41, 234,31, .80); }
-.topic-personal{ color: rgba(33, 156,232, .80); }
+.topic-news			{ color: #EA4A69; color: rgba(232, 33, 71, .80); }
+.topic-popculture	{ color: #EEE647; color: rgba(237, 227, 29,.80); }
+.topic-funny 		{ color: #EBB838; color: rgba(181, 237,29, .80); }
+.topic-games		{ color: #C1EE47; color: rgba(29, 222,237, .80); }
+.topic-science 		{ color: #47E2EE; color: rgba(36, 226,190, .80); }
+.topic-tech			{ color: #4DE5C8; color: rgba(234, 170,10, .80); }
+.topic-code			{ color: #4AADEA; color: rgba(33, 156,232, .80); }
+.topic-hobbies		{ color: #51EB49; color: rgba(41, 234, 31, .80); }
+.topic-personal		{ color: #4F7DE3; color: rgba(39, 96, 224, .80); }
 
 
 .stats { border: 1px solid #d1d1d1; left: -32px; top: 2px; background: #fff; padding: 3px; text-align: center; color: #6b6b6b; font-size: .8em; }
