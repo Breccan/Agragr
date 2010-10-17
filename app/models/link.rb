@@ -16,32 +16,57 @@ class Link < ActiveRecord::Base
     :nsfw    => 'adult content',
   }
 
-  scope :exlude_nsfw, lambda {
+  scope :exclude_nsfw, lambda {
     joins(:listings => :reddit_listings).where(["reddit_listings.nsfw = ?", false])
   }
-  scope :exlude_self, lambda {
+  scope :exclude_self, lambda {
     joins(:listings => :reddit_listings).where(["reddit_listings.self = ?", false])
   }
   scope :exclude_images, lambda {
-    joins(:listings => :reddit_listings).where(["reddit_listings.url = ?", /.jpg/])
+    where(["links.url NOT #{LIKE} ? AND links.url NOT #{LIKE} ?", '%jpg', '%png' ])
+  }
+  scope :exclude_fuck, lambda {
+    where(["links.title NOT #{LIKE} ?", '%fuck%' ])
+  }
+  scope :exclude_video, lambda {
+    where(["links.url NOT #{LIKE} ?", '%youtube%' ])
+  }
+  scope :exclude_pets, lambda {
+    where(["links.title NOT #{LIKE} ? AND links.title NOT #{LIKE} ?", '%my cat%', '%my dog%' ])
+  }
+  scope :exclude_dating, lambda {
+    where(["links.title NOT #{LIKE} ? AND links.title NOT #{LIKE} ?", '%girlfriend%', '%boyfriend%' ])
+  }
+  scope :exclude_dae, lambda {
+    where(["links.title NOT #{LIKE} ? AND links.title NOT #{LIKE} ?", '%does anyone else%', '%dae%' ])
+  }
+  scope :exclude_memes, lambda {
+    where(["links.title NOT #{LIKE} ?", '%keanu%' ])
   }
   scope :limit_topics, lambda { |topic_ids|
     where("links.topic_id IN (#{topic_ids.join(', ')})")
   }
 
   def self.build_filter_scope(prefs)
-    combined_scope = order('links.created_at DESC').includes(:topic)
+    combined_scope = order('links.created_at DESC').includes(:topic).includes(:listings)
     combined_scope = load_filter_scopes(prefs[:filters], combined_scope)
     combined_scope.limit_topics(prefs[:topics])
   end
 
   def self.load_filter_scopes(filters, combined_scope)
-    return combined_scope
     filters.each do |filter|
-      k = 'exclude_#{filter}'
-      combined_scope = combined_scope[k]
+      k = "exclude_#{filter.to_s}"
+      puts k
+      combined_scope = combined_scope.send(k)
     end
    combined_scope 
+  end
+
+  def url_count(feed_type)
+    self.listings.where(["feed_type = ?", feed_type]).count
+  end
+  def url_targets(feed_type)
+    self.listings.where(["feed_type = ?", feed_type]).all.collect { |l| l.comments_url }
   end
 
 

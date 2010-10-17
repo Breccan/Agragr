@@ -15,13 +15,13 @@ namespace :import do
           listing = Listing.create(:feed => source,
                                    :url => item["url"],
                                    :comments_url => "http://reddit.com#{item['permalink']}",
-                                   :type => source.type,
+                                   :feed_type => source.feed_type,
                                    :title => item["title"])
 
           RedditListing.create(:listing => listing,
-                               :nsfw => item["over18"] == "true" ? true : false,
-                               :self => item["is_self"] == "true" ? true : false,
-                               :author => item["author"],
+                               :nsfw => item["over18"] || false,
+                               :self => item["is_self"] || false,
+                               :author => item["author"] || false,
                                :num_comments => item["num_comments"],
                                :ups => item["ups"],
                                :downs => item["downs"],
@@ -41,7 +41,7 @@ namespace :import do
     listings.each do |item|
       unless Listing.where(["feed_id = ? AND url = ?", source.id, item.css('link').first.content]).first
         listing = Listing.create(:feed => source,
-                                 :type => source.type,
+                                 :feed_type => source.feed_type,
                                  :title => item.css('title').first.content,
                                  :url => item.css('link').first.content,
                                  :comments_url => item.css('comments').first.content)
@@ -57,7 +57,7 @@ namespace :import do
       listings.each do |item|
         unless Listing.where(["feed_id = ? AND url = ?", source.id, item.css('link').first.content]).first
           listing = Listing.create(:feed => source,
-                                   :type => source.type,
+                                   :feed_type => source.feed_type,
                                    :title => item.css('title').first.content,
                                    :url => item.css('link').first.content)
         end

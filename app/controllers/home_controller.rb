@@ -16,10 +16,10 @@ class HomeController < ApplicationController
   end
 
   def add_topic
-    topic = Topic.where(["name = ?", params[:topic_name]])
+    topic = Topic.where(["name = ?", params[:topic_name]]).first
     session[:topics] << topic.id
     if params[:since].blank?
-      render :success
+      render :nothing => true
       return
     else
       @links = Link.build_filter_scope(session).order("links.created_at DESC").where(["links.created_at > ? AND links.topic_id = ?", Time.at(params[:since].to_i+1), topic.id]).all
@@ -29,24 +29,24 @@ class HomeController < ApplicationController
   end
 
   def remove_topic
-    topic = Topic.where(["name = ?", params[:topic_name]])
+    topic = Topic.where(["name = ?", params[:topic_name]]).first
     session[:topics].delete(topic.id)
-    render :success
+    render :nothing => true
   end
 
   def add_filter
-    session[:filters] << Link::Filters[params[:filter_name]]
-    render :success
+    session[:filters] << params[:filter_name].to_sym
+    render :nothing => true
   end
 
   def remove_filter
-    session[:filters].delete(Link::Filters[params[:filter_name]])
-    render :success
+    session[:filters].delete(params[:filter_name])
+    render :nothing => true
   end
 
   private
   def set_filters
-    if session[:filters].blank?
+    if session[:filters].blank? && session[:values_set].blank?
       session[:filters] = [:nsfw]
     end
     @active_filters = get_filters(session[:filters])
@@ -58,8 +58,9 @@ class HomeController < ApplicationController
   end
 
   def set_topics
-    if session[:topics].blank?
+    if session[:topics].blank? && session[:values_set].blank?
       session[:topics] = Topic.all.collect { |t| t.id }
+      session[:values_set] = "true"
     end
   end
 

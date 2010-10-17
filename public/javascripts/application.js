@@ -6,9 +6,7 @@ var Req = ({
 
   send: function(path, params, callback) {
     if (!path.match(/^\//)) { path = '/'+path; }
-    if (!params) { params = {}; }
-    params.url = path;
-    this.reqObj.post(params);
+    this.reqObj.send({url:path});
   }
 
 });
@@ -93,16 +91,20 @@ var addUnread = function(n) {
   document.title = originalTitle +' ('+unread+')';
 }
 
-var clearUnread = function() {
+clearUnread = function() {
   active = true;
   document.title = document.title.replace(/\((.*)\)$/, '').trim();
+  (function() {
+    $$('.recent').set('tween', {'duration':'long'})
+                 .tween('background-color', '#ededed');
+  }).delay(10000);
 }
 
 /* Clear the unread items when the window is focused. */
-window.addEvent('focus', clearUnread);
-window.addEvent('blur', function() { active = false; });
+document.body.addEvent('mouseenter', clearUnread);
+document.body.addEvent('mouseleave', function() { active = false; });
 
-update = function() {
+var update = function() {
   var latest = $$('.loaded-stamp');
   if (!latest || latest.length==0) { return; }
   var stamp = latest[0].get('text');
@@ -112,7 +114,8 @@ update = function() {
       var news = els.filter(function(el) {
         return el.match('.news');
       });
-      $('news-list').adopt(news, 'top'); 
+      news.inject($('news-items'), 'top');
+      news.addClass('recent');
       addUnread(news.length);
     }
   }).get({since:stamp});

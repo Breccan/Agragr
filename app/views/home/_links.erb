@@ -1,14 +1,14 @@
 <% @links.each do |post| %>
-  <div class="news topic-<%= post.topic.name %> recent clearfix"> <!-- colour classes = one for each topic + either 'recent' or not -->
+  <div class="news topic-<%= post.topic.name %> clearfix"> <!-- colour classes = one for each topic + either 'recent' or not -->
     <!--div class="stats grid_1"> 123 </div-->
   <span class="loaded-stamp"><%=post.created_at.to_i%></span>
     <div class="news_content">
       <h2><%= link_to raw(post.title), post.url %> <span class="domain"><%= post.domain %></span></h2>
         <div class="post-counts">
-          <a class="reddit" href="#">4</a>
-          <a class="ynews" href="#">1</a>
-          <a class="fark" href="#">1</a>
-          <a class="mefi" href="#">2</a>
+          <%= link_with_count "reddit", post %>
+          <%= link_with_count "ynews", post %>
+          <%= link_with_count "fark", post %>
+          <%= link_with_count "mefi", post %>
         </div>
     </div>
   </div>

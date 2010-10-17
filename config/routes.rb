@@ -1,8 +1,8 @@
 Atn::Application.routes.draw do
-  match "topic/enable/:name" => "home#add_topic"
-  match "topic/disable/:name" => "home#remove_topic"
-  match "filter/enable/:name" => "home#add_filter"
-  match "filter/disable/:name" => "home#remove_filter"
+  match "topic/enable/:topic_name" => "home#add_topic"
+  match "topic/disable/:topic_name" => "home#remove_topic"
+  match "filter/enable/:filter_name" => "home#add_filter"
+  match "filter/disable/:filter_name" => "home#remove_filter"
   match "home" => "home#index", :as => :home
   
   # The priority is based upon order of creation:
