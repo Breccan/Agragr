@@ -14,10 +14,6 @@ class HomeController < ApplicationController
       @links = Link.build_filter_scope(session).paginate :page => params[:page], :order => 'links.created_at DESC'
     end
   end
-  
-  def about
-    @topics = Topic.all
-  end
 
   def add_topic
     topic = Topic.where(["name = ?", params[:topic_name]])
