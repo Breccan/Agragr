@@ -43,7 +43,7 @@ class Link < ActiveRecord::Base
   scope :exclude_memes, lambda {
     where(["links.title NOT #{LIKE} ?", '%keanu%' ])
   }
-  scope :tweets, lambda {
+  scope :exclude_tweets, lambda {
     where(["links.url NOT #{LIKE} ?", '%twitter.com%' ])
   }
   scope :limit_topics, lambda { |topic_ids|

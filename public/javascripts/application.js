@@ -6,10 +6,45 @@ var Req = ({
 
   send: function(path, params, callback) {
     if (!path.match(/^\//)) { path = '/'+path; }
-    this.reqObj.send({url:path});
+    if (!params)   params = {};
+    if (!callback) callback = function() { };
+    this.reqObj.send({url:path, data:params, onSuccess: callback});
   }
 
 });
+
+
+var latestStamp = new Number($$('.news .loaded-stamp')[0].get('text'));
+var addLinks = function(tree,els) {
+
+  var news = els.filter(function(el) {
+    if (!el.match('.news')) { return false; }
+    var stamp = el.getElement('.loaded-stamp');
+    if (!stamp) { return; }
+    stamp = new Number(stamp.get('text'));
+    if (latestStamp < stamp) {
+      latestStamp = stamp;
+    } else {
+      console.log(latestStamp +">"+ new Number(stamp));
+    }
+    return true;
+  });
+
+  news.inject($('news-items'), 'top');
+  console.log(news);
+  news.addClass('recent');
+  addUnread(news.length);
+
+};
+
+var update = function() {
+  new Request.HTML({
+    url:'/',
+    onSuccess:addLinks
+  }).get({since:latestStamp});
+}
+
+update.periodical(30000);
 
 /**
  * Topic Toggling
@@ -36,10 +71,15 @@ if ($('topics')) {
     //Toggle whether the class is enabled or disabled.
     if (li.hasClass('disabled')) {
       li.removeClass('disabled');
+      var stamp = li.getElement('span.loaded-stamp');
+      if (stamp) {
+        stamp = stamp.get('text');
+      }
       unhideTopic(name);
-      Req.send('topic/enable/'+name);
+      Req.send('topic/enable/'+name, {'since':stamp});
     } else {
       li.addClass('disabled'); 
+      li.adopt(new Element('span.loaded-stamp').set('text', new Date().getTime()));
       hideTopic(name);
       Req.send('topic/disable/'+name);
    }
@@ -91,7 +131,7 @@ var addUnread = function(n) {
   document.title = originalTitle +' ('+unread+')';
 }
 
-clearUnread = function() {
+var clearUnread = function() {
   active = true;
   document.title = document.title.replace(/\((.*)\)$/, '').trim();
   (function() {
@@ -103,24 +143,5 @@ clearUnread = function() {
 /* Clear the unread items when the window is focused. */
 document.body.addEvent('mouseenter', clearUnread);
 document.body.addEvent('mouseleave', function() { active = false; });
-
-var update = function() {
-  var latest = $$('.loaded-stamp');
-  if (!latest || latest.length==0) { return; }
-  var stamp = latest[0].get('text');
-  new Request.HTML({
-    url:'/',
-    onSuccess: function(tree,els) {
-      var news = els.filter(function(el) {
-        return el.match('.news');
-      });
-      news.inject($('news-items'), 'top');
-      news.addClass('recent');
-      addUnread(news.length);
-    }
-  }).get({since:stamp});
-}
-
-update.periodical(30000);
 
 })(); //End fun closure.
