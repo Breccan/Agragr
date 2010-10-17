@@ -11,8 +11,8 @@
 
 <div id="filter_wrapper" class="grid_3">
   <div id="filter">
+    <h2>Don't Show</h2>
     <form action="" method="">
-      <label>Don't show:</label>
       <select id="filter-list">
         <% @filters.each do |id,name| %>
           <option value="<%=id%>"><%=name%></option>
@@ -25,5 +25,6 @@
         <li><a id="<%=id%>" href="#"><%=name%></a></li>
       <% end %>
     </ul>
+    <p>Add everything you hate to the list above and we'll keep it off your page.</p>
   </div>
 </div>
