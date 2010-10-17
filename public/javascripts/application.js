@@ -89,6 +89,9 @@ window.addEvent('focus', clearUnread);
 window.addEvent('blur', function() { active = false; });
 
 update = function() {
+  var latest = $$('.loaded-stamp');
+  if (!latest || latest.length==0) { return; }
+  var stamp = latest[0].get('text');
   new Request.HTML({
     url:'/',
     onSuccess: function(tree,els) {
@@ -98,7 +101,7 @@ update = function() {
       $('news-list').adopt(news, 'top'); 
       addUnread(news.length);
     }
-  }).get({since:new Date().getTime()});
+  }).get({since:stamp});
 }
 
 update.periodical(30000);

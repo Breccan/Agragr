@@ -14,19 +14,16 @@
     <form action="" method="">
       <label>Don't show:</label>
       <select id="filter-list">
-        <option value="headline">headline only</option>
-        <option value="self">self posts</option>
-        <option value="videos">videos</option>
-        <option value="pictures">pictures</option>
-        <option value="dae">does anyone else...</option>
-        <option value="pets">"my dog", "my cat"</option>
-        <option value="girlfriend">"my girlfriend"</option>
-        <option value="nsfw">nsfw</option>
-        <option>custom filter...</option>
+        <% @filters.each do |id,name| %>
+          <option value="<%=id%>"><%=name%></option>
+        <% end %>
       </select>
       <input type="submit" value="add" />
     </form>
     <ul id="selected-filters">
+      <% @active_filters.each do |id,name| %>
+        <li><a id="<%=id%>" href="#"><%=name%></a></li>
+      <% end %>
     </ul>
   </div>
 </div>
