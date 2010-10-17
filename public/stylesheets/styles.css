@@ -12,9 +12,9 @@ a:hover { text-decoration: underline; }
 #wrap { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -23px; } /* sticky footer */
 .top_links { font-size: .9em; }
 
-#header { background: #4b4b4b; padding: 10px; }
+#header { background: #4b4b4b; padding: 0; display:none; }
 #header h2 { text-shadow: none; color: #fff; }
-#logo { position:absolute; right:20px; top:10px; }
+#logo { position:absolute; right:20px; top:0px; }
 
 nav { margin-bottom: 12px; background: #f2f2f2; }
 nav ul li { float: left; margin-right: -10px; padding: 10px 20px; background: #ED4D6C; background: rgba(232, 33, 71, .80); text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }

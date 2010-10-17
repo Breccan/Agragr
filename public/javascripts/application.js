@@ -89,8 +89,8 @@ window.addEvent('focus', clearUnread);
 window.addEvent('blur', function() { active = false; });
 
 update = function() {
-  var latest = $$('.loaded-timestamp');
-  if (!latest) { return; }
+  var latest = $$('.loaded-stamp');
+  if (!latest || latest.length==0) { return; }
   var stamp = latest[0].get('text');
   new Request.HTML({
     url:'/',
