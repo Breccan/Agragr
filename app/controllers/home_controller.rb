@@ -16,7 +16,7 @@ class HomeController < ApplicationController
   end
   
   def about
-    
+    @topics = Topic.all
   end
 
   def add_topic
@@ -35,7 +35,6 @@ class HomeController < ApplicationController
   def remove_topic
     topic = Topic.where(["name = ?", params[:topic_name]])
     session[:topics].delete(topic.id)
-    puts "THAT'S A BINGO!"
     render :success
   end
 
