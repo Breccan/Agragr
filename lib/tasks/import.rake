@@ -56,6 +56,8 @@ namespace :import do
       else
         link = Link.create(:title => listing.title,
                     :url => listing.url)
+        link.topic_id = listing.feed.topic_id
+        link.save
         listing.link = link
         listing.save
       end
