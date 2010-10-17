@@ -66,8 +66,11 @@ if ($('filter')) {
 }
 
 /* Unread Item Count */
+var active = true;
 var originalTitle = '';
 var addUnread = function(n) {
+  if (active) { return; }
+  if (n<1) { return; }
   var match  = document.title.match(/\((.*)\)$/);
   if (!match) { 
     originalTitle = document.title;
@@ -77,11 +80,13 @@ var addUnread = function(n) {
 }
 
 var clearUnread = function() {
- document.title = document.title.replace(/\((.*)\)$/, '');
+  active = true;
+  document.title = document.title.replace(/\((.*)\)$/, '').trim();
 }
 
 /* Clear the unread items when the window is focused. */
 window.addEvent('focus', clearUnread);
+window.addEvent('blur', function() { active = false; });
 
 update = function() {
   new Request.HTML({

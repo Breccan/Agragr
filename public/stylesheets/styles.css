@@ -15,10 +15,14 @@ a:hover { text-decoration: underline; }
 nav { margin-bottom: 12px; }
 nav ul li { float: left; margin-right: -10px; padding: 10px 20px; background: #ED4D6C; background: rgba(232, 33, 71, .80); text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
 nav ul li a { color: #2b2b2b; }
-nav ul li.topic1 { background: #ED4D6C; background: rgba(232, 33, 71, .80); }
-nav ul li.topic2 { background: #F1E94A; background: rgba(237, 227, 29,.80); }
-nav ul li.topic3 { background: #C4F14A; background: rgba(181, 237,29, .80); }
-nav ul li.topic4 { background: #4AE5F1; background: rgba(29, 222,237, .80); }
+nav ul li.community { background: #ED4D6C; background: rgba(232, 33, 71, .80); } /* pink */
+nav ul li.entertainment { background: #F1E94A; background: rgba(237, 227, 29,.80); } /* yellow*/
+nav ul li.funny{ background: rgba(234, 170,10, .80); } /* orange */
+nav ul li.programming  { background: #C4F14A; background: rgba(181, 237,29, .80); } /* green */
+nav ul li.science {  background: rgba(29, 222,237, .80); } /* light blue */
+nav ul li.technology { background: rgba(36, 226,190, .80); }  /* turq*/
+nav ul li.worldnews {  background: rgba(33, 156,232, .80); }  /* blue*/
+
 nav ul li.disabled { background: #dddddd; background: rgba(190, 190,190, .50);  }
 nav ul li.disabled a { color: #888; }
 
@@ -33,10 +37,13 @@ nav ul li.disabled a { color: #888; }
 .news_content { overflow: hidden; position: relative; padding-left: 10px;}
 .news img.thumb { display:none;}
 .news:hover img.thumb { float: right; border: 1px solid #ddd; padding: 4px; background: #fff; margin-right: 3%; }
-.topic1 { color: rgb(232, 33, 71); color: rgba(232, 33, 71, .80); }
-.topic2 { color: rgb(237, 227,29); color: rgba(237, 227, 29, .80); }
-.topic3 { color: rgb(181, 237,29); color: rgba(181, 237,29, .80); }
-.topic4 { color: rgb(29, 222,237); color: rgba(29, 222,237, .80); }
+.community {  color: rgba(232, 33, 71, .80); }
+.entertainmnet {  color: rgba(237, 227, 29,.80); }
+.funny {  color: rgba(181, 237,29, .80); }
+.programming { color: rgba(29, 222,237, .80); }
+.science {  color: rgba(36, 226,190, .80); }
+.technology { color: rgba(234, 170,10, .80); }
+.worldnews { color: rgba(33, 156,232, .80); }
 
 .stats { border: 1px solid #d1d1d1; left: -32px; top: 2px; background: #fff; padding: 3px; text-align: center; color: #6b6b6b; font-size: .8em; }
 
