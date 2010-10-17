@@ -107,7 +107,7 @@ top:5px; overflow: hidden; height: 16px; display: inline-block; }
 #about { padding: 10px; margin-top: 23px; position: relative; }
 #about h3 { color: #555; }
 #about p { line-height: 17px; color: #555; }
-#about img { position:absolute; right: -23px; top: -42px; }
+#about img { position:absolute; right: -23px; top: -21px; }
 
 
 .four04 { background: url('/images/404.gif') no-repeat 0 55px; height: 360px; }
