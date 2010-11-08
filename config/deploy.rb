@@ -1,5 +1,5 @@
 set :application, "atn"
-set :repository,  "git@github.com:railsrumble/rr10-team-299.git"
+set :repository,  "git@github.com:breccan/agragr.git
 set :deploy_to, "/apps/atn"
 
 set :scm, :git
