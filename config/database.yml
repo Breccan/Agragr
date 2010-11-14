@@ -18,5 +18,5 @@ test:
 production:
   adapter: postgresql
   database: atn
-  username: db_user
+  username: atn
   password: 'passwordpassword'

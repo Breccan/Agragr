@@ -1,15 +1,15 @@
 set :application, "atn"
-set :repository,  "git@github.com:breccan/agragr.git"
+set :repository,  "git@github.com:Breccan/Agragr.git"
 set :deploy_to, "/apps/atn"
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "74.207.230.221"
-role :app, "74.207.230.221"
-role :db,  "74.207.230.221", :primary => true
-set :user, "admin"
-set :runner, "admin"
+role :web, "173.255.209.118"
+role :app, "173.255.209.118"
+role :db,  "173.255.209.118", :primary => true # This is where Rails migrations will run
+set :user, "root"
+
 set :use_sudo, true
 default_run_options[:pty] = true
 
