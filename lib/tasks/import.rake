@@ -7,27 +7,30 @@ namespace :import do
   desc 'import a reddit json feed pass source name with NAME=source'
   task :reddit => :environment do
     Feed.where(["harvest_strategy = ?", "reddit"]).all.each do |source|
-      doc = open(source.url).read
-      json = JSON.parse(doc)
-      json["data"]["children"].each do |item|
-        item = item["data"]
-        unless Listing.where(["feed_id = ? AND url = ?", source.id, item["url"]]).first
-          listing = Listing.create(:feed => source,
-                                   :url => item["url"],
-                                   :comments_url => "http://reddit.com#{item['permalink']}",
-                                   :feed_type => source.feed_type,
-                                   :title => item["title"])
+      begin
+        doc = open(source.url).read
+        json = JSON.parse(doc)
+        json["data"]["children"].each do |item|
+          item = item["data"]
+          unless Listing.where(["feed_id = ? AND url = ?", source.id, item["url"]]).first
+            listing = Listing.create(:feed => source,
+                                     :url => item["url"],
+                                     :comments_url => "http://reddit.com#{item['permalink']}",
+                                     :feed_type => source.feed_type,
+                                     :title => item["title"])
 
-          RedditListing.create(:listing => listing,
-                               :nsfw => item["over18"] || false,
-                               :self => item["is_self"] || false,
-                               :author => item["author"] || false,
-                               :num_comments => item["num_comments"],
-                               :ups => item["ups"],
-                               :downs => item["downs"],
-                               :subreddit => item["subreddit"],
-                               :selftext => item["selftext"])
+            RedditListing.create(:listing => listing,
+                                 :nsfw => item["over18"] || false,
+                                 :self => item["is_self"] || false,
+                                 :author => item["author"] || false,
+                                 :num_comments => item["num_comments"],
+                                 :ups => item["ups"],
+                                 :downs => item["downs"],
+                                 :subreddit => item["subreddit"],
+                                 :selftext => item["selftext"])
+          end
         end
+      rescue Exception
       end
       sleep(1)
     end
