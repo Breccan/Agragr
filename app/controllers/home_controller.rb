@@ -15,7 +15,7 @@ class HomeController < ApplicationController
         @links = Link.build_filter_scope(session).paginate :page => params[:page], :order => 'links.created_at DESC'
       rescue Exception
         session[:values_set] = false
-        redirect_to :index
+        redirect_to :root
       end
     end
   end
