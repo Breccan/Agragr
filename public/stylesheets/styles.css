@@ -33,10 +33,12 @@ a:hover { text-decoration: underline; }
 #nav ul li.code			{ background: #47E2EE; background: rgba(29, 222, 237, .75); } /* light blue */
 #nav ul li.hobby		{ background: #4AADEA; background: rgba(33, 156, 232, .75); }  /* blue*/
 #nav ul li.personal		{ background: #4F7DE3; background: rgba(44, 115, 219, .75); }  /* deep blue*/
-#nav ul li.wikileaks	{ background: #90d1e3; background: rgba(144, 209, 227, .75); width: 155px; height: 22px; }  /* light blue */
-#nav ul li.wikileaks a 	{ background-image: url('/images/WikiLeaks-Logo.png')!important; display: block; width: 155px; height: 42px; position: relative; top: -10px; }
+#nav ul li.wikileaks	{ background: #90d1e3; background: rgba(144, 209, 227, .75); width: 145px; height: 22px; }  /* light blue */
+#nav ul li.wikileaks a 	{ background-image: url('/images/WikiLeaks-Logo.png')!important; display: block; width: 150px; height: 41px; position: relative; top: -10px; left: -10px; }
 #nav ul li.wikileaks a span 	{ display: none; }
 
+#nav ul li.disabled.wikileaks a { background-image: url('/images/WikiLeaks-Logodisabled.png')!important; }
+#nav ul li.disabled.wikileaks {}
 #nav ul li.disabled { background: #dddddd; background: rgba(190, 190,190, .50); }
 #nav ul li.disabled a { color: #888; }
 
@@ -69,7 +71,7 @@ top:5px; overflow: hidden; height: 16px; display: inline-block; }
 .topic-code			{ color: #47E2EE; color: rgba(29, 222, 237, .75); } /* light blue */
 .topic-hobby		{ color: #4AADEA; color: rgba(33, 156, 232, .75); } /* blue */
 .topic-personal		{ color: #4F7DE3; color: rgba(44, 115, 219, .75); } /* deep blue */
-.topic-wikileaks	{ color: #4F7DE3; color: rgba(44, 115, 219, .75); } /* deep blue */
+.topic-wikileaks	{ color: #90d1e3; color: rgba(144, 209, 227, .75) } /* light blue */
 
 .stats { border: 1px solid #d1d1d1; left: -32px; top: 2px; background: #fff; padding: 3px; text-align: center; color: #6b6b6b; font-size: .8em; }
 
