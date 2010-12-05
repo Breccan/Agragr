@@ -11,7 +11,11 @@ class HomeController < ApplicationController
       @links = Link.build_filter_scope(session).order("links.created_at DESC").where(["links.created_at > ?", Time.at(params[:since].to_i+1)]).limit(35).all
       render :partial => "links"
     else
-      @links = Link.build_filter_scope(session).paginate :page => params[:page], :order => 'links.created_at DESC'
+      begin
+        @links = Link.build_filter_scope(session).paginate :page => params[:page], :order => 'links.created_at DESC'
+      rescue Exception
+        @links = []
+      end
     end
   end
 
