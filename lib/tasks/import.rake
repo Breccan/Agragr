@@ -82,4 +82,39 @@ namespace :import do
     end
   end
 
+  desc 'add_wiki_leaks'
+  task :add_wikileaks => :environment do
+    Topic.create(:name => "wikileaks")
+    [
+      { :name => "r-wikileaks",
+        :url => 'http://www.reddit.com/r/wikileaks.json',
+        :topic_name => 'wikileaks',
+        :harvest_strategy => "reddit" ,
+        :type => "reddit"
+    },
+      { :name => "erictric",
+        :url => 'http://feeds.feedburner.com/Erictric?format=xml',
+        :topic_name => 'wikileaks',
+        :harvest_strategy => "rss" ,
+        :type => "other"
+    },
+      { :name => "techeye",
+        :url => 'http://www.techeye.net/company/wikileaks/feed',
+        :topic_name => 'wikileaks',
+        :harvest_strategy => "rss" ,
+        :type => "other"
+    }].each do |source|
+      unless Feed.where(["name = ?", source[:name]]).first
+        feed = Feed.create(:name => source[:name],
+                           :harvest_strategy => source[:harvest_strategy],
+                           :feed_type => source[:type],
+                           :url => source[:url])
+        topic = Topic.where("name = ?", source[:topic_name]).first
+        feed.topic = topic
+        feed.save
+      end
+    end
+
+  end
+
 end

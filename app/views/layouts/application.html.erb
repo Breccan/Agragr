@@ -19,9 +19,8 @@
 		<div id="nav" class="clearfix">
 			<ul id="topics">
       <% @topics.each do |topic| %>
-				<li id="<%=topic.name%>" class="topic <%= topic.name %> <%= (topic.disabled(session)) ? 'disabled' : '' %>"><a href="#"><%=topic.name%></a></li>
+				<li id="<%=topic.name%>" class="topic <%= topic.name %> <%= (topic.disabled(session)) ? 'disabled' : '' %>"><a href="#"><%=topic.name unless topic.name == "wikileaks"%></a></li>
       <% end %>
-			<li id="wikileaks" class="topic-wikileaks wikileaks"><a href="#"><span>Wikileaks</span></a></li>
 			</ul>
 		</div>
 
