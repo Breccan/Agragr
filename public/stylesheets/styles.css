@@ -24,22 +24,24 @@ a:hover { text-decoration: underline; }
 #nav ul li { width: auto; float: left; margin-right: -10px; padding: 10px 20px; background: #ED4D6C; background: rgba(232, 33, 71, .80); text-transform: uppercase; font-weight: bold; letter-spacing: 1px; }
 #nav ul li a { color: #2b2b2b; }
 
-#nav ul li.news		{ background: #EA4A69; background: rgba(232, 33, 71, .75); } /* pink */
-#nav ul li.pop		{ background: #EBB838; background: rgba(234, 170, 10, .75); } /* orange */
+#nav ul li.news			{ background: #EA4A69; background: rgba(232, 33, 71, .75); } /* pink */
+#nav ul li.pop			{ background: #EBB838; background: rgba(234, 170, 10, .75); } /* orange */
 #nav ul li.funny		{ background: #EEE647; background: rgba(237, 227, 29,.75); } /* yellow*/
 #nav ul li.games		{ background: #C1EE47; background: rgba(181, 237, 29, .75); } /* green */
-#nav ul li.science 	{ background: #51EB49; background: rgba(98, 226, 84, .75); } /* bright green */
+#nav ul li.science 		{ background: #51EB49; background: rgba(98, 226, 84, .75); } /* bright green */
 #nav ul li.tech 		{ background: #4DE5C8; background: rgba(36, 226, 190, .75); }  /* turq*/
-#nav ul li.code		{ background: #47E2EE; background: rgba(29, 222, 237, .75); } /* light blue */
+#nav ul li.code			{ background: #47E2EE; background: rgba(29, 222, 237, .75); } /* light blue */
 #nav ul li.hobby		{ background: #4AADEA; background: rgba(33, 156, 232, .75); }  /* blue*/
-#nav ul li.personal	{ background: #4F7DE3; background: rgba(44, 115, 219, .75); }  /* deep blue*/
+#nav ul li.personal		{ background: #4F7DE3; background: rgba(44, 115, 219, .75); }  /* deep blue*/
+#nav ul li.wikileaks	{ background: #90d1e3; background: rgba(144, 209, 227, .75); width: 155px; height: 22px; }  /* light blue */
+#nav ul li.wikileaks a 	{ background-image: url('/images/WikiLeaks-Logo.png')!important; display: block; width: 155px; height: 42px; position: relative; top: -10px; }
+#nav ul li.wikileaks a span 	{ display: none; }
 
-#nav ul li.disabled { background: #dddddd; background: rgba(190, 190,190, .50);  }
+#nav ul li.disabled { background: #dddddd; background: rgba(190, 190,190, .50); }
 #nav ul li.disabled a { color: #888; }
 
 #content { margin-bottom: 40px; padding: 10px; min-width: 860px; }
-#content .news { border-top: 4px solid; margin-bottom: 4px; background-color: #EDEDED; padding: 5px; position: relative;  }
-#content .news:hover {}
+#content .news { border-top: 4px solid; margin-bottom: 4px; background-color: #EDEDED; padding: 5px; position: relative; }
 #content .news.disabled { display: none; }
 
 #content .news h2 a { color: #333; }
@@ -67,6 +69,7 @@ top:5px; overflow: hidden; height: 16px; display: inline-block; }
 .topic-code			{ color: #47E2EE; color: rgba(29, 222, 237, .75); } /* light blue */
 .topic-hobby		{ color: #4AADEA; color: rgba(33, 156, 232, .75); } /* blue */
 .topic-personal		{ color: #4F7DE3; color: rgba(44, 115, 219, .75); } /* deep blue */
+.topic-wikileaks	{ color: #4F7DE3; color: rgba(44, 115, 219, .75); } /* deep blue */
 
 .stats { border: 1px solid #d1d1d1; left: -32px; top: 2px; background: #fff; padding: 3px; text-align: center; color: #6b6b6b; font-size: .8em; }
 
